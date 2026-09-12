@@ -18,6 +18,17 @@ with open(
 
 
 # ==========================================
+# LOAD SAVED EMBEDDINGS
+# ==========================================
+
+embeddings = np.load(
+    "data/processed/embeddings.npy"
+)
+
+print("Loaded embeddings:", embeddings.shape)
+
+
+# ==========================================
 # LOAD EMBEDDING MODEL
 # ==========================================
 
@@ -29,59 +40,22 @@ model = SentenceTransformer(
 
 
 # ==========================================
-# CREATE EMBEDDINGS
-# ==========================================
-
-texts = [
-    chunk.get("text", "")
-    for chunk in chunks
-]
-
-embeddings = model.encode(
-    texts,
-    convert_to_numpy=True,
-    show_progress_bar=True
-)
-
-
-# ==========================================
-# NORMALIZE EMBEDDINGS
-# ==========================================
-
-norms = np.linalg.norm(
-    embeddings,
-    axis=1,
-    keepdims=True
-)
-
-embeddings = embeddings / np.maximum(
-    norms,
-    1e-12
-)
-
-
-# ==========================================
 # TEXT NORMALIZATION
 # ==========================================
 
 def normalize_text(text):
-    """
-    Convert text into a simple normalized form.
-    """
 
     if not text:
         return ""
 
     text = text.lower()
 
-    # Replace non-alphanumeric characters
     text = re.sub(
         r"[^a-z0-9\s]",
         " ",
         text
     )
 
-    # Remove extra spaces
     text = re.sub(
         r"\s+",
         " ",
@@ -107,10 +81,6 @@ def get_words(text):
 # ==========================================
 
 def lexical_score(query, text):
-    """
-    Measures how many query words occur
-    in the retrieved text.
-    """
 
     query_words = get_words(query)
     text_words = get_words(text)
@@ -133,10 +103,6 @@ def lexical_score(query, text):
 # ==========================================
 
 def phrase_score(query, text):
-    """
-    Detect whether the complete query or
-    meaningful parts of it occur in the text.
-    """
 
     query_normalized = normalize_text(query)
     text_normalized = normalize_text(text)
@@ -153,7 +119,6 @@ def phrase_score(query, text):
     if len(query_words) < 2:
         return 0.0
 
-    # Check consecutive word pairs
     pair_matches = 0
     total_pairs = len(query_words) - 1
 
@@ -182,14 +147,6 @@ def phrase_score(query, text):
 # ==========================================
 
 def handwritten_boost(chunk):
-    """
-    Give handwritten OCR evidence a small
-    additional relevance weight.
-
-    This does NOT make handwritten evidence
-    automatically correct; it only helps OCR
-    compete with longer PDF chunks.
-    """
 
     if chunk.get("type") == "handwritten":
         return 0.12
@@ -204,7 +161,7 @@ def handwritten_boost(chunk):
 def search(query, top_k=5):
 
     # --------------------------------------
-    # Encode query
+    # Encode query only
     # --------------------------------------
 
     query_embedding = model.encode(
@@ -259,10 +216,6 @@ def search(query, top_k=5):
             chunk
         )
 
-        # ----------------------------------
-        # FINAL RELEVANCE SCORE
-        # ----------------------------------
-
         final_score = (
             0.60 * semantic
             + 0.25 * lexical
@@ -281,7 +234,7 @@ def search(query, top_k=5):
         )
 
     # --------------------------------------
-    # Sort by final score
+    # Sort by relevance
     # --------------------------------------
 
     scored_results.sort(
