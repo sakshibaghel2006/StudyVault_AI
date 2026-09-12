@@ -1,0 +1,1082 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+
+/* ==========================================
+   RESET
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    /* paper + ink */
+    --paper: #f2efe4;
+    --paper-line: rgba(35, 40, 58, 0.07);
+    --card: #fbf9f1;
+    --card-border: rgba(35, 40, 58, 0.14);
+
+    --ink: #23283a;
+    --ink-soft: #5c6178;
+    --ink-faint: #8b8f9f;
+
+    /* accents drawn from the studying world: highlighter + red pen + verified stamp */
+    --highlighter: #f3c94d;
+    --highlighter-ink: #7a5e00;
+    --clay: #b5453a;
+    --moss: #3d7857;
+
+    --shadow: 0 18px 40px rgba(35, 40, 58, 0.10);
+}
+
+
+/* ==========================================
+   BODY / PAPER
+   ========================================== */
+
+body {
+    font-family: "IBM Plex Sans", sans-serif;
+
+    background: var(--paper);
+
+    color: var(--ink);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+.paper {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.ruled-lines {
+    position: absolute;
+    inset: 0;
+
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 37px,
+        var(--paper-line) 37px,
+        var(--paper-line) 38px
+    );
+
+    mask-image: linear-gradient(to bottom, transparent, black 8%, black 70%, transparent);
+}
+
+
+.margin-rule {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 64px;
+
+    width: 1px;
+
+    background: rgba(181, 69, 58, 0.28);
+}
+
+
+@media (max-width: 700px) {
+
+    .margin-rule {
+        left: 24px;
+    }
+}
+
+
+/* ==========================================
+   APP
+   ========================================== */
+
+.app {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+.navbar {
+    width: min(1040px, 92%);
+
+    margin: 0 auto;
+
+    padding: 30px 0 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+
+    font-family: "Fraunces", serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    color: var(--card);
+
+    background: var(--ink);
+}
+
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+
+.brand-name {
+    font-family: "Fraunces", serif;
+
+    font-size: 18px;
+
+    font-weight: 600;
+}
+
+
+.brand-tag {
+    color: var(--ink-faint);
+
+    font-size: 12px;
+
+    font-style: italic;
+}
+
+
+.status-pill {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    color: var(--ink-soft);
+
+    padding: 8px 12px;
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 999px;
+
+    background: var(--card);
+}
+
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: var(--moss);
+}
+
+
+/* ==========================================
+   MAIN
+   ========================================== */
+
+.main-container {
+    width: min(880px, 92%);
+
+    margin: 0 auto;
+
+    padding: 44px 0 60px;
+
+    flex: 1;
+}
+
+
+/* ==========================================
+   HERO
+   ========================================== */
+
+.hero {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 36px;
+
+    margin-bottom: 46px;
+}
+
+
+.hero h1 {
+    font-family: "Fraunces", serif;
+
+    font-size: clamp(34px, 4.4vw, 48px);
+
+    font-weight: 600;
+
+    line-height: 1.14;
+
+    letter-spacing: -0.01em;
+}
+
+
+.hero h1 em {
+    display: block;
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    color: var(--ink-soft);
+}
+
+
+.hero p {
+    max-width: 460px;
+
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: var(--ink-soft);
+}
+
+
+.feature-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 22px;
+}
+
+
+.feature-tag {
+    padding: 6px 11px;
+
+    font-size: 12px;
+
+    color: var(--ink-soft);
+
+    border: 1px dashed var(--card-border);
+
+    border-radius: 7px;
+}
+
+
+/* -- decorative index card -- */
+
+.hero-card {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.index-card {
+    width: 100%;
+    max-width: 260px;
+
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    border-radius: 3px;
+
+    padding: 20px 18px 16px;
+
+    box-shadow: var(--shadow);
+
+    transform: rotate(2.5deg);
+
+    position: relative;
+}
+
+
+.index-card::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 22px;
+    right: 22px;
+
+    height: 1px;
+
+    background: var(--paper-line);
+}
+
+
+.index-card-tab {
+    display: inline-block;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 11px;
+
+    color: var(--highlighter-ink);
+
+    background: var(--highlighter);
+
+    padding: 2px 7px;
+
+    border-radius: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.index-card-quote {
+    font-family: "Fraunces", serif;
+
+    font-style: italic;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: var(--ink);
+}
+
+
+.index-card-source {
+    margin-top: 14px;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 11px;
+
+    color: var(--ink-faint);
+}
+
+
+@media (max-width: 700px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        order: -1;
+    }
+
+    .index-card {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* ==========================================
+   ASK CARD / RESULT CARD
+   ========================================== */
+
+.ask-card,
+.result-card {
+    border: 1px solid var(--card-border);
+
+    background: var(--card);
+
+    border-radius: 10px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.ask-card {
+    padding: 28px;
+}
+
+
+.card-head {
+    margin-bottom: 16px;
+}
+
+
+.card-tab {
+    display: inline-block;
+
+    font-family: "Fraunces", serif;
+
+    font-style: italic;
+
+    font-size: 13px;
+
+    color: var(--ink-faint);
+
+    margin-bottom: 6px;
+}
+
+
+.card-head h2 {
+    font-family: "Fraunces", serif;
+
+    font-size: 21px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   TEXTAREA
+   ========================================== */
+
+textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    padding: 16px;
+
+    border-radius: 6px;
+
+    border: 1px solid var(--card-border);
+
+    background: var(--paper);
+
+    color: var(--ink);
+
+    font: inherit;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    outline: none;
+
+    transition: border-color 0.2s ease;
+}
+
+
+textarea::placeholder {
+    color: var(--ink-faint);
+}
+
+
+textarea:focus {
+    border-color: var(--clay);
+}
+
+
+/* ==========================================
+   SUGGESTIONS
+   ========================================== */
+
+.suggestions {
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-top: 12px;
+}
+
+
+.suggestion {
+    border: 1px dashed var(--card-border);
+
+    background: transparent;
+
+    color: var(--ink-soft);
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    font: inherit;
+
+    font-size: 12.5px;
+
+    cursor: pointer;
+
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+
+.suggestion:hover {
+    color: var(--ink);
+
+    border-color: var(--clay);
+}
+
+
+/* ==========================================
+   ASK BUTTON
+   ========================================== */
+
+.ask-button {
+    margin-top: 20px;
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    color: var(--card);
+
+    font: inherit;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background: var(--ink);
+
+    transition: background-color 0.2s ease;
+}
+
+
+.ask-button:hover {
+    background: #14172a;
+}
+
+
+.ask-button:disabled {
+    opacity: 0.6;
+
+    cursor: wait;
+}
+
+
+/* ==========================================
+   LOADING
+   ========================================== */
+
+.loading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin: 26px 0;
+
+    color: var(--ink-soft);
+}
+
+
+.loading > div:last-child {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+
+.loading strong {
+    font-size: 14px;
+
+    color: var(--ink);
+}
+
+
+.loading span {
+    font-size: 12px;
+}
+
+
+.loader {
+    width: 20px;
+    height: 20px;
+
+    border: 3px solid var(--card-border);
+
+    border-top-color: var(--clay);
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   RESULT CARD
+   ========================================== */
+
+.result-card {
+    margin-top: 24px;
+
+    padding: 30px;
+
+    animation: fadeIn 0.3s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.result-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid var(--paper-line);
+}
+
+
+.result-label {
+    font-family: "Fraunces", serif;
+
+    font-style: italic;
+
+    color: var(--ink-faint);
+
+    font-size: 13px;
+}
+
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: lowercase;
+}
+
+
+.status-badge::first-letter {
+    text-transform: uppercase;
+}
+
+
+.status-badge.answered {
+    color: var(--moss);
+
+    background: rgba(61, 120, 87, 0.10);
+
+    border: 1px solid rgba(61, 120, 87, 0.22);
+}
+
+
+.status-badge.not-covered {
+    color: var(--clay);
+
+    background: rgba(181, 69, 58, 0.09);
+
+    border: 1px solid rgba(181, 69, 58, 0.22);
+}
+
+
+/* ==========================================
+   SECTIONS
+   ========================================== */
+
+.answer-section,
+.sources-section {
+    padding-top: 26px;
+}
+
+
+.answer-section h3,
+.sources-section h3 {
+    font-family: "Fraunces", serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    margin-bottom: 13px;
+}
+
+
+/* ==========================================
+   ANSWER
+   ========================================== */
+
+.answer {
+    position: relative;
+
+    color: var(--ink);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    white-space: pre-wrap;
+
+    padding: 18px 20px;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(var(--paper), var(--paper)) padding-box,
+        linear-gradient(90deg, var(--highlighter) 0%, var(--highlighter) 100%) 0 100% / 100% 0.55em no-repeat;
+
+    background-color: var(--paper);
+
+    border: 1px solid var(--paper-line);
+
+    overflow: hidden;
+}
+
+
+.answer::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: var(--highlighter);
+
+    transform: scaleX(0);
+    transform-origin: left center;
+
+    animation: sweep 0.6s ease-out 0.05s both;
+}
+
+
+@keyframes sweep {
+
+    0% {
+        transform: scaleX(0);
+        opacity: 0.5;
+    }
+
+    70% {
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scaleX(1);
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   SOURCES
+   ========================================== */
+
+.sources {
+    counter-reset: source;
+
+    display: grid;
+
+    gap: 10px;
+}
+
+
+.source-card {
+    counter-increment: source;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px 16px 14px 50px;
+
+    border-radius: 6px;
+
+    background: var(--paper);
+
+    border: 1px solid var(--paper-line);
+
+    border-left: 3px solid var(--clay);
+}
+
+
+.source-card::before {
+    content: counter(source, decimal-leading-zero);
+
+    position: absolute;
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 11px;
+
+    color: var(--ink-faint);
+}
+
+
+.source-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+.source-icon {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 5px;
+
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--ink-soft);
+}
+
+
+.source-name {
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--ink);
+
+    word-break: break-word;
+}
+
+
+.source-meta {
+    margin-top: 3px;
+
+    display: flex;
+
+    gap: 8px;
+
+    color: var(--ink-faint);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 11px;
+}
+
+
+.score {
+    flex-shrink: 0;
+
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    background: var(--card);
+
+    border: 1px solid var(--card-border);
+
+    color: var(--ink-soft);
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   TRUST MESSAGE
+   ========================================== */
+
+.trust-message {
+    margin: 20px auto 0;
+
+    max-width: 640px;
+
+    color: var(--ink-faint);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+.trust-message strong {
+    color: var(--ink-soft);
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 24px;
+
+    color: var(--ink-faint);
+
+    font-size: 11px;
+
+    border-top: 1px solid var(--paper-line);
+}
+
+
+.footer-rule {
+    width: 1px;
+    height: 11px;
+
+    background: var(--card-border);
+}
+
+
+/* ==========================================
+   ACCESSIBILITY
+   ========================================== */
+
+button:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--clay);
+
+    outline-offset: 2px;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .loader,
+    .result-card,
+    .answer::before {
+        animation: none;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 22px 0 6px;
+    }
+
+    .main-container {
+        padding-top: 30px;
+    }
+
+    .ask-card,
+    .result-card {
+        padding: 20px;
+    }
+
+    .source-card {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .score {
+        margin-left: 34px;
+    }
+}

@@ -1,0 +1,9 @@
+pymupdf
+python-pptx
+pytesseract
+pillow
+sentence-transformers
+numpy
+fastapi
+uvicorn
+python-multipart

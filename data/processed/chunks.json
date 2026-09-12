@@ -1,0 +1,1547 @@
+[
+  {
+    "text": "DATABASE MANAGEMENT SYSTEMS \nLECTURE NOTES \n \n2rd Class, CS Dept. \n1st Semester",
+    "page": 1,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 1
+  },
+  {
+    "text": "UNIT-ONE \nIntroduction to Database Management System \nAs the name suggests, the database management system consists of two parts. They are: \n1. Database and \n2. Management System \nWhat is a Database? \nTo find out what database is, we have to start from data, which is the basic building block of any \nDBMS. \n \n Data: Facts, figures, statistics etc. having no particular meaning (e.g. 01, ABC, 19 etc). \n Record: Collection of related data items, e.g. in the above example the three data items had n",
+    "page": 2,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 2
+  },
+  {
+    "text": "). \n Record: Collection of related data items, e.g. in the above example the three data items had no \nmeaning. However, if we organize them in the following way, then they collectively represent \nmeaningful information. \nRoll \nName \nAge \n01 \nABC \n19 \n \n Table or Relation: Collection of related records. \n \nRoll \nName \nAge \n01 \nABC \n19 \n02 \nDEF \n22 \n03 \nXYZ \n28 \n \n The columns of this relation are called Fields, Attributes or Domains.  \n The rows are called Tuples or Records. \n \n Database: Co",
+    "page": 2,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 3
+  },
+  {
+    "text": "e called Fields, Attributes or Domains.  \n The rows are called Tuples or Records. \n \n Database: Collection of related relations.  \n Consider the following collection of tables: \n \n \n \n \nT1 \nRoll \nName \nAge \n01 \nABC \n19 \n02 \nDEF \n22 \n03 \nXYZ \n28 \nT3 \nRoll \nYear \n01 \nI \n02 \nII \n03 \nI \n \nT2 \nRoll \nAddress \n01 \nKOL \n02 \nDEL \n03 \nMUM",
+    "page": 2,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 4
+  },
+  {
+    "text": "We now have a collection of four tables. They can be called a “related collection” because we can \nclearly find out that there are some common attributes existing in a selected pair of tables. Because \nof these common attributes, we may combine the data of two or more tables together to find out the \ncomplete details of a student.  \nQuestions like “Which hostel does the youngest student live in?” can be answered now, although \nAge and Hostel attributes are in different tables. \nA database in a D",
+    "page": 3,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 5
+  },
+  {
+    "text": "can be answered now, although \nAge and Hostel attributes are in different tables. \nA database in a DBMS could be viewed by lots of different people with different responsibilities. \nFigure 1.1: Employees are accessing Data through DBMS \n \nFor example, within a company there are different departments, as well as customers, who each need \nto see different kinds of data. Each employee in the company will have different levels of access to \nthe database with their own customized front-end applicatio",
+    "page": 3,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 6
+  },
+  {
+    "text": "will have different levels of access to \nthe database with their own customized front-end application. \nIn a database, data is organized strictly in row and column format. The rows are called Tuple or \nRecord.  \nThe data items within one row may belong to different data types.  \nT4 \nYear \nHostel \nI \nH1 \nII \nH2",
+    "page": 3,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 7
+  },
+  {
+    "text": "On the other hand, the columns are often called Domain or Attribute. All the data items within a \nsingle attribute are of the same data type. \n \nWhat is Management System? \n A database-management system (DBMS) is a collection of interrelated data and a set of \nprograms to access those data. This is a collection of related data with an implicit meaning and \nhence is a database. The collection of data, usually referred to as the database, contains \ninformation relevant to an enterprise.  \n The p",
+    "page": 4,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 8
+  },
+  {
+    "text": "ata, usually referred to as the database, contains \ninformation relevant to an enterprise.  \n The primary goal of a DBMS is to provide a way to store and retrieve database information that \nis both convenient and efficient. By data, we mean known facts that can be recorded and that have \nimplicit meaning. \nThe management system is important, why?  Because without the existence of some kind of rules and \nregulations it is not possible to maintain the database. We have to select the particular at",
+    "page": 4,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 9
+  },
+  {
+    "text": "es and \nregulations it is not possible to maintain the database. We have to select the particular attributes, which \nshould be included in a particular table; the common attributes to create relationship between two \ntables; if a new record has to be inserted or deleted then which tables should have to be handled etc. \nThese issues must be resolved by having some kind of rules to follow in order to maintain the integrity \nof the database. \n Database systems are designed to manage large bodies o",
+    "page": 4,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 10
+  },
+  {
+    "text": "o maintain the integrity \nof the database. \n Database systems are designed to manage large bodies of information.  \n Management of data involves both defining structures for storage of information and providing \nmechanisms for the manipulation of information.  \nIn addition, the database system must ensure the safety of the information stored, despite system \ncrashes or attempts at unauthorized access. If data are to be shared among several users, the system \nmust avoid possible anomalous resul",
+    "page": 4,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 11
+  },
+  {
+    "text": "ccess. If data are to be shared among several users, the system \nmust avoid possible anomalous results. \nBecause information is so important in most organizations, computer scientists have developed a large \nbody of concepts and techniques for managing data. This chapter briefly introduces the principles of \ndatabase systems. \n \nDatabase Management System (DBMS) and Its Applications: \nA Database management system is a computerized record-keeping system. It is a repository or a \ncontainer for col",
+    "page": 4,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 12
+  },
+  {
+    "text": "anagement system is a computerized record-keeping system. It is a repository or a \ncontainer for collection of computerized data files. The overall purpose of DBMS is to allow the users \nto define, store, retrieve and update the information contained in the database on demand. Information \ncan be anything that is of significance to an individual or organization. \nDatabases touch all aspects of our lives. Some of the major areas of application are as follows:",
+    "page": 4,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 13
+  },
+  {
+    "text": "1. Banking \n2. Airlines \n3. Universities \n4. Manufacturing and selling \n5. Human resources \n \n Enterprise Information \n◦ Sales: For customer, product, and purchase information. \n◦ Accounting: For payments, receipts, account balances, assets and other accounting information. \n◦ Human resources: For information about employees, salaries, payroll taxes, and benefits, and for \ngeneration of paychecks. \n◦ Manufacturing: For management of the supply chain and for tracking production of items in facto",
+    "page": 5,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 14
+  },
+  {
+    "text": ". \n◦ Manufacturing: For management of the supply chain and for tracking production of items in factories, \ninventories of items in warehouses and stores, and orders for items. \n◦ Online retailers: For sales data noted above plus online order tracking, generation of recommendation \nlists, and maintenance of online product evaluations. \n Banking and Finance \n◦ Banking: For customer information, accounts, loans, and banking transactions. \n◦ Credit card transactions: For purchases on credit cards a",
+    "page": 5,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 15
+  },
+  {
+    "text": "ounts, loans, and banking transactions. \n◦ Credit card transactions: For purchases on credit cards and generation of monthly statements. \n Finance \n◦ For storing information about holdings, sales, and purchases of financial instruments such as stocks \nand bonds; also for storing real-time market data to enable online trading by customers and automated \ntrading by the firm. \n Universities \n◦ For student information, course registrations, and grades (in addition to standard enterprise \ninformati",
+    "page": 5,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 16
+  },
+  {
+    "text": "student information, course registrations, and grades (in addition to standard enterprise \ninformation such as human resources and accounting). \n Airlines \n◦ For reservations and schedule information. Airlines were among the first to use databases in a \ngeographically distributed manner. \n Telecommunication \n◦ For keeping records of calls made, generating monthly bills, maintaining balances on prepaid calling \ncards, and storing information about the communication networks.",
+    "page": 5,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 17
+  },
+  {
+    "text": "Purpose of Database Systems: \nDatabase systems arose in response to early methods of computerized management of commercial \ndata. As an example of such methods, typical of the 1960s, consider part of a university organization \nthat, among other data, keeps information about all instructors, students, departments, and course \nofferings. One way to keep the information on a computer is to store it in operating system files. To \nallow users to manipulate the information, the system has a number of ",
+    "page": 6,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 18
+  },
+  {
+    "text": "n operating system files. To \nallow users to manipulate the information, the system has a number of application programs that \nmanipulate the files, including programs to: \n Add new students, instructors, and courses \n Register students for courses and generate class rosters \n Assign grades to students, compute grade point averages (GPA), and generate transcripts",
+    "page": 6,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 19
+  },
+  {
+    "text": " LECTURE TWO -DBMS \n Page | 1       \n \nWhen Processed \nWhen Processed \nKNOWLEDGE \nINFORMATION \nDATA \nINTRODUCTION TO BASIC CONCEPTS OF DATABASE SYSTEMS Cont. \nWhat is Data? \nThe raw facts are called as data. The word “raw” indicates that they have not been processed. \nFor example, 89 is the data. \nWhat is information? \n \nThe processed data is known as information. \n \nFor example, Marks: 89; then it becomes information. \nWhat is Knowledge? \n1. Knowledge refers to the practical use of informatio",
+    "page": 7,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 20
+  },
+  {
+    "text": " it becomes information. \nWhat is Knowledge? \n1. Knowledge refers to the practical use of information. \n2. Knowledge necessarily involves a personal experience. \n \nDATA/INFORMATION PROCESSING: \n \nThe process of converting the data (raw facts) into meaningful information is called as \ndata/information processing. \n \n \n \nNote: In business, processing knowledge is more useful to make decisions for any organization. \n \nDIFFERENCE BETWEEN DATAAND INFORMATION: \n \n \nDATA \nINFORMATION \na)   Raw facts. \n",
+    "page": 7,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 21
+  },
+  {
+    "text": "y organization. \n \nDIFFERENCE BETWEEN DATAAND INFORMATION: \n \n \nDATA \nINFORMATION \na)   Raw facts. \na)   Processed data \nb)   It is in unorganized form \nb)   It is in organized form \nc) Data doesn’t help in Decision \nmaking process \nc) Information helps in Decision \nmaking process \n \n \nFILE ORIENTED APPROACH: \n \nThe earliest business computer systems were used to process business records and produce \ninformation. They were generally faster and more accurate than equivalent manual systems. \nThese",
+    "page": 7,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 22
+  },
+  {
+    "text": "ce \ninformation. They were generally faster and more accurate than equivalent manual systems. \nThese systems stored groups of records in separate files, and so they were called file processing \nsystems.",
+    "page": 7,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 23
+  },
+  {
+    "text": " LECTURE TWO -DBMS \n Page | 2       \n \n \n1. File system is a collection of data. Any management with the file system, user has to write \nthe procedures. \n2. File system gives the details of the data representation and Storage of data. \n3. In File, system storing and retrieving of data cannot be done efficiently. \n4. Concurrent access to the data in the file system has many problems like a Reading the file \nwhile other deleting some information, updating some information. \n5. File system does n",
+    "page": 8,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 24
+  },
+  {
+    "text": "g the file \nwhile other deleting some information, updating some information. \n5. File system does not provide crash recovery mechanism. \nFor example, while we are entering some data into the file if System crashes then content \nof the file is completely lost. \n6. Protecting a file under file system is very difficult. \nThe typical file-oriented system is supported by a conventional operating system. Permanent \nrecords are stored in various files and a number of different application programs are",
+    "page": 8,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 25
+  },
+  {
+    "text": "m. Permanent \nrecords are stored in various files and a number of different application programs are written to \nextract records from and add records to the appropriate files. \n \nDISADVANTAGES OF FILE-ORIENTED SYSTEM: \n \nThe following are the disadvantages of File-Oriented System: \n \n1. Data Redundancy and Inconsistency: \n \nSince files and application programs are created by different programmers over a long \nperiod, the files are likely to be: \na) Having different formats and the programs may b",
+    "page": 8,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 26
+  },
+  {
+    "text": "over a long \nperiod, the files are likely to be: \na) Having different formats and the programs may be written in several programming \nlanguages. \nb) Moreover, the same piece of information may be duplicated in several places. \n  This redundancy leads to:  \n Higher storage and access cost. \n In addition, it may lead to data inconsistency. \n \n \n2. Difficulty in Accessing Data: \n \nThe conventional file processing environments do not allow needed data to be retrieved in a \nconvenient and efficien",
+    "page": 8,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 27
+  },
+  {
+    "text": " file processing environments do not allow needed data to be retrieved in a \nconvenient and efficient manner. Better data retrieval system must be developed for general \nuse.",
+    "page": 8,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 28
+  },
+  {
+    "text": " LECTURE TWO -DBMS \n Page | 3       \n \n3. Data Isolation: \n \nSince data is scattered in various files, and files may be in different formats, it is difficult to \nwrite new application programs to retrieve the appropriate data. \n \n4. Concurrent Access Anomalies: \n \nIn order to improve the overall performance of the system and obtain a faster response time, \nmany systems allow multiple users to update the data simultaneously. In such an \nenvironment, interaction of concurrent updates may result ",
+    "page": 9,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 29
+  },
+  {
+    "text": "date the data simultaneously. In such an \nenvironment, interaction of concurrent updates may result in inconsistent data. \n \n5. Security Problems: \n \nNot every user of the database system should be able to access all the data. For example, in \nbanking system, payroll personnel need only that part of the database that has information \nabout various bank employees. They do not need access to information about customer \naccounts. It is difficult to enforce such security constraints. \n \n6. Integrity",
+    "page": 9,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 30
+  },
+  {
+    "text": "tion about customer \naccounts. It is difficult to enforce such security constraints. \n \n6. Integrity Problems: \n \nThe data values stored in the database must satisfy certain types of consistency constraints. \nFor example, the balance of a bank account may never fall below a prescribed amount. \nThese constraints are enforced in the system by adding appropriate code in the various \napplication programs. When new constraints are added, it is difficult to change the \nprograms to enforce them. The pr",
+    "page": 9,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 31
+  },
+  {
+    "text": "ams. When new constraints are added, it is difficult to change the \nprograms to enforce them. The problem is compounded when constraints involve several \ndata items for different files. \n \n7. Atomicity Problem: \n \nA computer system like any other mechanical or electrical device is subject to failure. In \nmany applications, it is crucial to ensure that once a failure has occurred and has been \ndetected, the data are restored to the consistent state existed prior to the failure. \n \n \nExample: \n \nC",
+    "page": 9,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 32
+  },
+  {
+    "text": "cted, the data are restored to the consistent state existed prior to the failure. \n \n \nExample: \n \nConsider part of a savings-bank enterprise that keeps information about all customers and \nsavings accounts. One way to keep the information on a computer is to store it in operating \nsystem files. To allow users to manipulate the information, the system has a number of \napplication programs that manipulate the files, including:",
+    "page": 9,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 33
+  },
+  {
+    "text": " LECTURE TWO -DBMS \n Page | 4       \n \n A program to debit or credit an account \n A program to add a new account \n A program to find the balance of an account \n A program to generate monthly statements \nProgrammers wrote these application programs to meet the needs of the bank. New application \nprograms are added to the system as the need arises. For example, suppose that the savings bank \ndecides to offer checking accounts. \nAs a result, the bank creates new permanent files that contain i",
+    "page": 10,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 34
+  },
+  {
+    "text": "ecides to offer checking accounts. \nAs a result, the bank creates new permanent files that contain information about all the checking \naccounts maintained in the bank, and it may have to write new application programs to deal with \nsituations that do not arise in savings accounts, such as overdrafts. Thus, as time goes by, the \nsystem acquires more files and more application programs.  \nThe system stores permanent records in various files, and it needs different Application programs \nto extract ",
+    "page": 10,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 35
+  },
+  {
+    "text": " stores permanent records in various files, and it needs different Application programs \nto extract records from, and add records to, the appropriate files. Before database management \nsystems (DBMS) came along, organizations usually stored information in such systems. \nOrganizational information in a file- processing system has a number of major disadvantages: \n \n1. Data Redundancy and Inconsistency: \n \nThe address and telephone number of a particular customer may appear in a file that \nconsist",
+    "page": 10,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 36
+  },
+  {
+    "text": "ncy: \n \nThe address and telephone number of a particular customer may appear in a file that \nconsists of savings-account records and in a file that consists of checking-account records. \nThis redundancy leads to higher storage and access cost. In, it may lead to data \ninconsistency; that is, the various copies of the same data may no longer agree. For \nexample, a changed customer address may be reflected in savings-account records but not \nelsewhere in the system. \n \n2. Difficulty in Accessing D",
+    "page": 10,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 37
+  },
+  {
+    "text": "flected in savings-account records but not \nelsewhere in the system. \n \n2. Difficulty in Accessing Data: \n \nSuppose that one of the bank officers needs to find out the names of all customers who live \nwithin a particular postal-code area. The officer asks the data-processing department to \ngenerate such a list. Because there is no application program to generate that. The bank \nofficer has now two choices: either obtain the list of all customers and extract the needed \ninformation manually or as",
+    "page": 10,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 38
+  },
+  {
+    "text": " choices: either obtain the list of all customers and extract the needed \ninformation manually or ask a system programmer to write the necessary application \nprogram. Both alternatives are obviously unsatisfactory.",
+    "page": 10,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 39
+  },
+  {
+    "text": " LECTURE TWO -DBMS \n Page | 5       \n \n3. Data Isolation: \n \nBecause data are scattered in various files and files may be in different formats, writing new \napplication programs to retrieve the appropriate data is difficult. \n \n4. Integrity Problems: \n \nThe balance of a bank account may never fall below a prescribed amount (say, $25). \nDevelopers enforce these constraints in the system by adding appropriate code in the \nvarious application programs. However, when new constraints are added, it ",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 40
+  },
+  {
+    "text": " appropriate code in the \nvarious application programs. However, when new constraints are added, it is difficult to \nchange the programs to enforce them. The problem is compounded when constraints \ninvolve several data items from different files. \n \n5. Atomicity Problems: \n \nA computer system, like any other mechanical or electrical device, is subject to failure. In \nmany applications, it is important that, if a failure occurs, the data be restored to the \nconsistent state that existed prior to ",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 41
+  },
+  {
+    "text": "tant that, if a failure occurs, the data be restored to the \nconsistent state that existed prior to the failure. \nConsider a program to transfer $50 from account A to account B. If a system failure occurs \nduring the execution of the program, it is possible that the $50 was removed from account A \nbut was not credited to account B, resulting in an inconsistent database state. Clearly, it is \nessential to database consistency that either both the credit and debit occur, or that neither \noccur. Th",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 42
+  },
+  {
+    "text": "tial to database consistency that either both the credit and debit occur, or that neither \noccur. That is, the funds transfer must be atomic—it must happen in its entirety or not at \nall. It is difficult to ensure atomicity in a conventional file-processing system. \n \n6. Concurrent-Access Anomalies: \n \nFor the sake of overall performance of the system and faster response, many systems allow \nmultiple users to update the data simultaneously. In such an environment, interaction of \nconcurrent upda",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 43
+  },
+  {
+    "text": "ple users to update the data simultaneously. In such an environment, interaction of \nconcurrent updates may result in inconsistent data. \nConsider bank account A, containing $500. If two customers withdraw funds (say $50 and \n$100  respectively) from  account  A  at  about  the same time, the result  of  the  concurrent \nexecutions may leave the account in an incorrect (or inconsistent) state. Suppose that the \nprograms executing on behalf of each withdrawal read the old balance, reduce that val",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 44
+  },
+  {
+    "text": "pose that the \nprograms executing on behalf of each withdrawal read the old balance, reduce that value by \nthe amount being withdrawn, and write the result back. If the two programs run \nconcurrently, they may both read the value $500, and write back $450 and $400, \nrespectively. Depending on which one writes the value last, the account may contain $450 \nor $400, rather than the correct value of $350. To guard against this possibility, the system \nmust maintain some form of supervision. However,",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 45
+  },
+  {
+    "text": "350. To guard against this possibility, the system \nmust maintain some form of supervision. However, supervision is difficult to provide",
+    "page": 11,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 46
+  },
+  {
+    "text": " LECTURE TWO -DBMS \n Page | 6       \n \nbecause data may be accessed by many different application programs that have not been \ncoordinated previously. \n \n7. Security Problems: \n \nNot every user of the database system should be able to access all the data. For example, in \na banking system, payroll personnel need to see only that part of the database that has \ninformation about the various bank employees. They do not need access to information \nabout customer accounts. But, since application pr",
+    "page": 12,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 47
+  },
+  {
+    "text": "mployees. They do not need access to information \nabout customer accounts. But, since application programs are added to the system in an ad \nhoc manner, enforcing such security constraints is difficult. These difficulties, among \nothers, prompted the development of database systems.",
+    "page": 12,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 48
+  },
+  {
+    "text": "1 \n LECTURE Three -DBMS \n \n1 | P a g e \n \nHistory of Database Systems: \n1950s and early 1960s: \n \nMagnetic tapes were developed for data storage \n \nData processing tasks such as payroll were automated, with data stored on tapes. \n \nData could also be input from punched card decks, and output to printers. \n \nLate 1960s and 1970s: The use of hard disks in the late 1960s changed the scenario for data \nprocessing greatly, since hard disks allowed direct access to data. \n \nWith disks, network a",
+    "page": 13,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 49
+  },
+  {
+    "text": " data \nprocessing greatly, since hard disks allowed direct access to data. \n \nWith disks, network and hierarchical databases could be created that allowed data structures  \nsuch as lists and trees to be stored on disk. Programmers could construct and manipulate these \ndata structures. \n \nWith disks, network and hierarchical databases could be created that allowed data structures  \nsuch as lists and trees to be stored on disk. Programmers could construct and manipulate these \ndata structures. \n",
+    "page": 13,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 50
+  },
+  {
+    "text": "and trees to be stored on disk. Programmers could construct and manipulate these \ndata structures. \n \nIn the 1970’s the EF CODD defined the Relational Model. \nIn the 1980’s: \n \nInitial commercial relational database systems, such as IBM DB2, Oracle, Ingress, and DEC \nRdb, played a major role in advancing techniques for efficient processing of declarative \nqueries. \n \nIn the early 1980s, relational databases had become competitive with network and hierarchical \ndatabase systems even in the are",
+    "page": 13,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 51
+  },
+  {
+    "text": "nal databases had become competitive with network and hierarchical \ndatabase systems even in the area of performance. \n \nThe 1980s also saw much research on parallel and distributed databases, as well as initial \nwork on object-oriented databases. \nEarly 1990s: \n \nThe SQL language was designed primarily in the 1990’s. \n \nAnd this is used for the transaction processing applications. \n \nDecision support and querying re-emerged as a major application area for databases. \n \nDatabase vendors als",
+    "page": 13,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 52
+  },
+  {
+    "text": " support and querying re-emerged as a major application area for databases. \n \nDatabase vendors also began to add object-relational support to their databases.",
+    "page": 13,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 53
+  },
+  {
+    "text": "2 \n LECTURE Three -DBMS \n \n2 | P a g e \n \nLate 1990s: \n The major event was the explosive growth of the World Wide Web. \n \nDatabases were deployed much more extensively than ever before. Database systems now had \nto support very high transaction processing rates, as well as very high reliability and 24 * 7 \navailability (availability 24 hours a day, 7 days a week, meaning no downtime for scheduled \nmaintenance activities). \n \nDatabase systems also had to support Web interfaces to data. \nThe ",
+    "page": 14,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 54
+  },
+  {
+    "text": "led \nmaintenance activities). \n \nDatabase systems also had to support Web interfaces to data. \nThe Evolution of Database systems: \nThe Evolution of Database systems are as follows: \n1. File Management System \n2. Hierarchical database System \n3. Network Database System \n4. Relational Database System \n1) File Management System: \nThe file management system also called as FMS in short is one in which all data is stored on a \nsingle large file. The main disadvantage in this system is searching a rec",
+    "page": 14,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 55
+  },
+  {
+    "text": " all data is stored on a \nsingle large file. The main disadvantage in this system is searching a record or data takes a long \ntime. This lead to the introduction of the concept, of indexing in this system. Then also the FMS \nsystem had lot of drawbacks to name a few like updating or modifications to the data cannot be \nhandled easily, sorting the records took long time and so on. All these drawbacks led to the \nintroduction of the Hierarchical Database System. \n2) Hierarchical Database System: \n",
+    "page": 14,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 56
+  },
+  {
+    "text": "ks led to the \nintroduction of the Hierarchical Database System. \n2) Hierarchical Database System: \n \nFig: Hierarchical Database System \nThe previous system FMS drawback of accessing records and sorting records which took a long",
+    "page": 14,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 57
+  },
+  {
+    "text": "3 \n LECTURE Three -DBMS \n \n3 | P a g e \n \ntime was removed in this by the introduction of parent-child relationship between records in \ndatabase. The origin of the data is called the root from which several branches have data at \ndifferent levels and the last level is called the leaf. The main drawback in this was if there is any \nmodification or addition made to the structure then the whole structure needed alteration, which \nmade the task a tedious one. In order to avoid this next system took",
+    "page": 15,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 58
+  },
+  {
+    "text": "cture needed alteration, which \nmade the task a tedious one. In order to avoid this next system took its origin, which is called as \nthe Network Database System. \n3) Network Database System: \nIn this, the main concept of many-many relationships got introduced. But this also followed the \nsame technology of pointers to define relationships with a difference in this made in the \nintroduction if grouping of data items as sets. \n \n \nFig: Network Database System \n4) Relational Database System: \nIn or",
+    "page": 15,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 59
+  },
+  {
+    "text": "ping of data items as sets. \n \n \nFig: Network Database System \n4) Relational Database System: \nIn order to overcome all the drawbacks of the previous systems, the Relational Database System got \nintroduced in which data get organized as tables and each record forms a row with many fields or \nattributes in it. Relationships between tables are also formed in this system. \n \n \n \n \n \n \nFig: Relational Database System (RDBS) \nCUSTOMER",
+    "page": 15,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 60
+  },
+  {
+    "text": "4 \n LECTURE Three -DBMS \n \n4 | P a g e \n \n \n \n \nFig: Relationship in RDBS \n \n Advantages of DBMS: \n1) Controlling of Redundancy: Data redundancy refers to the duplication of data (i.e storing same \ndata multiple times). In a database system, by having a centralized database and centralized \ncontrol of data by the DBA the unnecessary duplication of data is avoided. It also eliminates the \nextra time for processing the large volume of data. It results in saving the storage space. \n2) Improved Da",
+    "page": 16,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 61
+  },
+  {
+    "text": "ime for processing the large volume of data. It results in saving the storage space. \n2) Improved Data Sharing: DBMS allows a user to share the data in any number of application \nprograms. \n3) Data Integrity: Integrity means that the data in the database is accurate. Centralized control of \nthe data helps in permitting the administrator to define integrity constraints to the data in the \ndatabase. For example: in customer database, we can enforce an integrity that it must accept the \ncustomer on",
+    "page": 16,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 62
+  },
+  {
+    "text": " For example: in customer database, we can enforce an integrity that it must accept the \ncustomer only from Noida and Meerut city. \n4) Security: Having complete authority over the operational data, enables the DBA in ensuring that \nthe only mean of access to the database is through proper channels. The DBA can define \nauthorization checks to be carried out whenever access to sensitive data is attempted. \n5) Data Consistency: By eliminating data redundancy, we greatly reduce the opportunities for",
+    "page": 16,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 63
+  },
+  {
+    "text": "5 \n LECTURE Three -DBMS \n \n5 | P a g e \n \ninconsistency. For example: is a customer address is stored only once, we cannot have \ndisagreement on the stored values. Also updating data values is greatly simplified when each \nvalue is stored in one place only. Finally, we avoid the wasted storage that results from redundant \ndata storage. \n6) Efficient Data Access: In a database system, the data is managed by the DBMS and all access \nto the data is through the DBMS providing a key to effective dat",
+    "page": 17,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 64
+  },
+  {
+    "text": "managed by the DBMS and all access \nto the data is through the DBMS providing a key to effective data processing \n7) Enforcements of Standards: With the centralized of data, DBA can establish and enforce the \ndata standards which may include the naming conventions, data quality standards etc. \n8) Data Independence: Ina database system, the database management system provides the \ninterface between the application programs and the data. When changes are made to the data \nrepresentation, the Meta ",
+    "page": 17,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 65
+  },
+  {
+    "text": " the application programs and the data. When changes are made to the data \nrepresentation, the Meta data obtained by the DBMS is changed but the DBMS is continues to \nprovide the data to application program in the previously used way. The DBMs handles the task \nof transformation of data wherever necessary. \n9) Reduced Application Development and Maintenance Time: DBMS supports many important \nfunctions that are common to many applications, accessing data stored in the DBMS, which \nfacilitates th",
+    "page": 17,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 66
+  },
+  {
+    "text": "tions that are common to many applications, accessing data stored in the DBMS, which \nfacilitates the quick development of application. \n Disadvantages of DBMS: \n1) It is bit complex. Since it supports multiple functionality to give the user the best, the underlying \nsoftware has become complex. The designers and developers should have thorough knowledge \nabout the software to get the most out of it. \n2)  Because of its complexity and functionality, it uses large amount of memory. It also needs",
+    "page": 17,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 67
+  },
+  {
+    "text": " it. \n2)  Because of its complexity and functionality, it uses large amount of memory. It also needs large \nmemory to run efficiently. \n3) DBMS system works on the centralized system, i.e.; all the users from all over the world access \nthis database. Hence any failure of the DBMS, will impact all the users. \n4) DBMS is generalized software, i.e.; it is written work on the entire systems rather specific one. \nHence, some of the application will run slow.",
+    "page": 17,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 68
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n1 | P a g e \n \n View of Data \nA database system is a collection of interrelated data and a set of programs that allow users to access and \nmodify these data. A major purpose of a database system is to provide users with an abstract view of the \ndata. That is, the system hides certain details of how the data are stored and maintained. \n \nData Abstraction \nFor the system to be usable, it must retrieve data efficiently. The need for efficiency has led designers to \nuse comple",
+    "page": 18,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 69
+  },
+  {
+    "text": " usable, it must retrieve data efficiently. The need for efficiency has led designers to \nuse complex data structures to represent data in the database. Since many database-system users are not \ncomputer trained, developers hide the complexity from users through several levels of abstraction, to \nsimplify users’ interactions with the system: \n \nFig: Levels of Abstraction in a DBMS \n \nA) Physical level (or Internal View / Schema): The lowest level of abstraction describes how the data \nare actual",
+    "page": 18,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 70
+  },
+  {
+    "text": "evel (or Internal View / Schema): The lowest level of abstraction describes how the data \nare actually stored. The physical level describes complex low-level data structures in detail. \nB) Logical level (or Conceptual View / Schema): The next-higher level of abstraction describes what \ndata are stored in the database, and what relationships exist among those data. The logical level \nthus describes the entire database in terms of a small number of relatively simple structures.",
+    "page": 18,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 71
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n2 | P a g e \n \nAlthough implementation of the simple structures at the logical level may involve complex physical-\nlevel structures, the user of the logical level does not need to be aware of this complexity. This is \nreferred to as physical data independence.  \nDatabase administrators, who must decide what information to keep in the database, use the \nlogical level of abstraction. \nC) View level (or External View / Schema): The highest level of abstraction describes only p",
+    "page": 19,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 72
+  },
+  {
+    "text": "ction. \nC) View level (or External View / Schema): The highest level of abstraction describes only part of \nthe entire database. Even though the logical level uses simpler structures, complexity remains \nbecause of the variety of information stored in a large database. Many users of the database system \ndo not need all this information; instead, they need to access only a part of the database. The view \nlevel of abstraction exists to simplify their interaction with the system. The system may pro",
+    "page": 19,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 73
+  },
+  {
+    "text": " view \nlevel of abstraction exists to simplify their interaction with the system. The system may provide \nmany views for the same database. Figure above shows the relationship among the three levels of \nabstraction. \nAn analogy to the concept of data types in programming languages may clarify the distinction among \nlevels of abstraction. Many high-level programming languages support the notion of a structured type. \nFor example, we may describe a record as follows: \n                             ",
+    "page": 19,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 74
+  },
+  {
+    "text": "a structured type. \nFor example, we may describe a record as follows: \n                                                   type  \nInstructor = record \nID : char (5);  \nname : char (20);  \ndept name : char (20);  \nsalary : numeric (8,2); \n                                                    end; \nThis code defines a new record type called instructor with four fields. Each field has a name and a type \nassociated with it. A university organization may have several such record types, including \n- Depa",
+    "page": 19,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 75
+  },
+  {
+    "text": "\nassociated with it. A university organization may have several such record types, including \n- Department, with fields dept_name, building, and budget \n- Course, with fields course_id, title, dept_name, and credits \n- Student, with fields ID, name, dept_name, and tot_cred \nAt the physical level, an Instructor, Department, or Student record can be described as a block of \nconsecutive storage locations. The compiler hides this level of detail from programmers. \nSimilarly, the database system hide",
+    "page": 19,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 76
+  },
+  {
+    "text": "ions. The compiler hides this level of detail from programmers. \nSimilarly, the database system hides many of the lowest-level storage details from database",
+    "page": 19,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 77
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n3 | P a g e \n \nprogrammers. Database administrators, on the other hand, may be aware of certain details of the \nphysical organization of the data. \nAt the logical level, each such record is described by a type definition, as in the previous code segment, \nand the interrelationship of these record types is defined as well. Programmers using a programming \nlanguage work at this level of abstraction. Similarly, database administrators usually work at this \nlevel of abstraction",
+    "page": 20,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 78
+  },
+  {
+    "text": " level of abstraction. Similarly, database administrators usually work at this \nlevel of abstraction. \nFinally, at the view level, computer users see a set of application programs that hide details of the \ndata types. At the view level, several views of the database are defined, and a database user sees \nsome or all of these views.  \nIn addition to hiding details of the logical level of the database, the views also provide a security \nmechanism to prevent users from accessing certain parts of th",
+    "page": 20,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 79
+  },
+  {
+    "text": "se, the views also provide a security \nmechanism to prevent users from accessing certain parts of the database.  \nFor example, clerks in the university registrar office can see only that part of the database that has \ninformation about students; they cannot access information about salaries of instructors. \n \n \n Instances and Schemas \nDatabases change over time as information is inserted and/or deleted. The collection of information stored \nin the database at a particular moment is called an in",
+    "page": 20,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 80
+  },
+  {
+    "text": "eleted. The collection of information stored \nin the database at a particular moment is called an instance of the database. The overall design of the \ndatabase is called the database schema. Schemas are changed infrequently, if at all. The concept of \ndatabase schemas and instances can be understood by analogy to a program written in a programming \nlanguage. A database schema corresponds to the variable declarations (along with associated type \ndefinitions) in a program. Each variable has a part",
+    "page": 20,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 81
+  },
+  {
+    "text": "riable declarations (along with associated type \ndefinitions) in a program. Each variable has a particular value at a given instant. The values of the \nvariables in a program at a point in time correspond to an instance of a database schema.  \nDatabase systems have several schemas, partitioned according to the levels of abstraction. The physical \nschema describes the database design at the physical level, while the logical schema describes the \ndatabase design at the logical level. A database ma",
+    "page": 20,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 82
+  },
+  {
+    "text": "l level, while the logical schema describes the \ndatabase design at the logical level. A database may also have several schemas at the view level, \nsometimes called subschemas, which describe different views of the database. Of these, the logical \nschema is by far the most important, in terms of its effect on application programs, since programmers \nconstruct applications by using the logical schema. The physical schema is hidden beneath the logical",
+    "page": 20,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 83
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n4 | P a g e \n \nschema, and can usually be changed easily without affecting application programs. Application programs \nare said to exhibit physical data independence if they do not depend on the physical schema, and thus \nneed not be rewritten if the physical schema changes. \n \n Data Models \nUnderlying the structure of a database is the data model: a collection of conceptual tools for describing \ndata, data relationships, data semantics, and consistency constraints. A data",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 84
+  },
+  {
+    "text": " tools for describing \ndata, data relationships, data semantics, and consistency constraints. A data model provides a way to \ndescribe the design of a database at the physical, logical, and view levels. \nThe data models can be classified into four different categories: \n \nA). Relational Model. The relational model uses a collection of tables to represent both data and the \nrelationships among those data. Each table has multiple columns, and each column has a unique name. \nTables are also known a",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 85
+  },
+  {
+    "text": "e data. Each table has multiple columns, and each column has a unique name. \nTables are also known as relations. The relational model is an example of a record-based model. \nRecord-based models are so named because the database is structured in fixed-format records of several \ntypes. Each table contains records of a particular type. Each record type defines a fixed number of \nfields, or attributes. The columns of the table correspond to the attributes of the record type. The \nrelational data mod",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 86
+  },
+  {
+    "text": ". The columns of the table correspond to the attributes of the record type. The \nrelational data model is the most widely used data model, and a vast majority of current database \nsystems are based on the relational model. \n \nB). Entity-Relationship Model. The entity-relationship (E-R) data model uses a collection of basic \nobjects, called entities, and relationships among these objects. \nAn entity is a “thing” or “object” in the real world that is distinguishable from other objects. The entity-",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 87
+  },
+  {
+    "text": "y is a “thing” or “object” in the real world that is distinguishable from other objects. The entity- \nrelationship model is widely used in database design. \n \nC). Object-Based Data Model. Object-oriented programming (especially in Java, C++, or C#) has become \nthe dominant software-development methodology. This led to the development of an object-oriented \ndata model that can be seen as extending the E-R model with notions of encapsulation, methods \n(functions), and object identity. The object-r",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 88
+  },
+  {
+    "text": "the E-R model with notions of encapsulation, methods \n(functions), and object identity. The object-relational data model combines features of the object-\noriented data model and relational data model. \n \nD). Semi-structured Data Model. The semi-structured data model permits the specification of data where \nindividual data items of the same type may have different sets of attributes. This is in contrast to the \ndata models mentioned earlier, where every data item of a particular type must have th",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 89
+  },
+  {
+    "text": "trast to the \ndata models mentioned earlier, where every data item of a particular type must have the same set of \nattributes. The Extensible Markup Language (XML) is widely used to represent semi-structured data.",
+    "page": 21,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 90
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n5 | P a g e \n \n \n Historically, the network data model and the hierarchical data model preceded the relational data \nmodel. These models were tied closely to the underlying implementation, and complicated the task of \nmodeling data. As a result they are used little now, except in old database code that is still in service in \nsome places. \n \n Database Languages \nA database system provides a data-definition language to specify the database schema and a data-\nmanipulation l",
+    "page": 22,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 91
+  },
+  {
+    "text": "system provides a data-definition language to specify the database schema and a data-\nmanipulation language to express database queries and updates. In practice, the data- definition and data-\nmanipulation languages are not two separate languages; instead they simply form parts of a single \ndatabase language, such as the widely used SQL language. \n \n(1) Data-Manipulation Language \nA data-manipulation language (DML) is a language that enables users to access or manipulate data \nas organized by th",
+    "page": 22,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 92
+  },
+  {
+    "text": "ion language (DML) is a language that enables users to access or manipulate data \nas organized by the appropriate data model. The types of access are: \n- Retrieval of information stored in the database \n- Insertion of new information into the database \n- Deletion of information from the database \n- Modification of information stored in the database \nThere are basically two types of DML: \n(a) Procedural DMLs require a user to specify what data are needed and how to get those data. \n(b) Declarativ",
+    "page": 22,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 93
+  },
+  {
+    "text": "dural DMLs require a user to specify what data are needed and how to get those data. \n(b) Declarative DMLs (also referred to as nonprocedural DMLs) require a user to specify what data \nare needed without specifying how to get those data. \nDeclarative DMLs are usually easier to learn and use than are procedural DMLs. However, since a \nuser does not have to specify how to get the data, the database system has to figure out an efficient \nmeans of accessing data. A query is a statement requesting th",
+    "page": 22,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 94
+  },
+  {
+    "text": "system has to figure out an efficient \nmeans of accessing data. A query is a statement requesting the retrieval of information. The portion \nof a DML that involves information retrieval is called a query language. Although technically \nincorrect, it is common practice to use the terms query language and data-manipulation language \nsynonymously.",
+    "page": 22,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 95
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n6 | P a g e \n \n(2) Data-Definition Language (DDL) \nWe specify a database schema by a set of definitions expressed by a special language called a Data-\nDefinition Language (DDL). The DDL is also used to specify additional properties of the data. \nWe specify the storage structure and access methods used by the database system by a set of statements \nin a special type of DDL called a data storage and definition language. These statements define the \nimplementation details of t",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 96
+  },
+  {
+    "text": "led a data storage and definition language. These statements define the \nimplementation details of the database schemas, which are usually hidden from the users. The data values \nstored in the database must satisfy certain consistency constraints. \nFor example, suppose the university requires that the account balance of a department must never be \nnegative. The DDL provides facilities to specify such constraints. The database system checks these \nconstraints every time the database is updated. I",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 97
+  },
+  {
+    "text": "uch constraints. The database system checks these \nconstraints every time the database is updated. In general, a constraint can be an arbitrary predicate \npertaining to the database. However, arbitrary predicates may be costly to test. Thus, database systems \nimplement integrity constraints that can be tested with minimal overhead. \n \nA) Domain Constraints. A domain of possible values must be associated with every attribute (for \nexample, integer types, character types, date/time types). Declari",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 98
+  },
+  {
+    "text": "ciated with every attribute (for \nexample, integer types, character types, date/time types). Declaring an attribute to be of a particular \ndomain acts as a constraint on the values that it can take. Domain constraints are the most elementary \nform of integrity constraint. They are tested easily by the system whenever a new data item is entered \ninto the database. \n \nB) Referential Integrity. There are cases where we wish to ensure that a value that appears in one \nrelation for a given set of att",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 99
+  },
+  {
+    "text": " are cases where we wish to ensure that a value that appears in one \nrelation for a given set of attributes also appears in a certain set of attributes in another relation \n(referential integrity). For example, the department listed for each course must be one that actually \nexists. More precisely, the dept name value in a course record must appear in the dept name attribute \nof some record of the department relation. \nDatabase modifications can cause violations of referential integrity. When a ",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 100
+  },
+  {
+    "text": " department relation. \nDatabase modifications can cause violations of referential integrity. When a referential-integrity \nconstraint is violated, the normal procedure is to reject the action that caused the violation. \n \nC) Assertions. An assertion is any condition that the database must always satisfy. Domain constraints \nand referential-integrity constraints are special forms of assertions. However, there are many \nconstraints that we cannot express by using only these special forms. For exam",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 101
+  },
+  {
+    "text": "ever, there are many \nconstraints that we cannot express by using only these special forms. For example, “Every department \nmust have at least five courses offered every semester” must be expressed as an assertion. When an",
+    "page": 23,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 102
+  },
+  {
+    "text": " LECTURE FOUR -DBMS \n7 | P a g e \n \nassertion is created, the system tests it for validity. If the assertion is valid, then any future modification \nto the database is allowed only if it does not cause that assertion to be violated. \n \nD) Authorization. We may want to differentiate among the users as far as the type of access they are \npermitted on various data values in the database. These differentiations are expressed in terms of \nauthorization, the most common being: read authorization, whi",
+    "page": 24,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 103
+  },
+  {
+    "text": "rentiations are expressed in terms of \nauthorization, the most common being: read authorization, which allows reading, but not \nmodification, of data; insert authorization, which allows insertion of new data, but not modification \nof existing data; update authorization, which allows modification, but not deletion, of data; and delete \nauthorization, which allows deletion of data. We may assign the user all, none, or a combination of \nthese types of authorization. \n \nThe DDL, just like any other ",
+    "page": 24,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 104
+  },
+  {
+    "text": " user all, none, or a combination of \nthese types of authorization. \n \nThe DDL, just like any other programming language, gets as input some instructions (statements) and \ngenerates some output. The output of the DDL is placed in the data dictionary, which contains \nmetadata—that is, data about data. The data dictionary is considered to be a special type of table that \ncan only be accessed and updated by the database system itself (not a regular user). The database system \nconsults the data dict",
+    "page": 24,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 105
+  },
+  {
+    "text": "ated by the database system itself (not a regular user). The database system \nconsults the data dictionary before reading or modifying actual data.",
+    "page": 24,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 106
+  },
+  {
+    "text": "1 \n   \n1 \n \nLec 5 \n Database Languages \nA database system provides a data-definition language to specify the \ndatabase schema and a data-manipulation language to express database \nqueries and updates. In practice, the data- definition and data-manipulation \nlanguages are not two separate languages; instead they simply form parts of a \nsingle database language, such as the widely used SQL language. \n(1) Data-Manipulation Language \nA data-manipulation language (DML) is a language that enables use",
+    "page": 25,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 107
+  },
+  {
+    "text": ". \n(1) Data-Manipulation Language \nA data-manipulation language (DML) is a language that enables users to \naccess or manipulate data as organized by the appropriate data model. The \ntypes of access are: \n- Retrieval of information stored in the database \n- Insertion of new information into the database \n- Deletion of information from the database \n- Modification of information stored in the database \nA query is a statement requesting the retrieval of information. The portion of a \nDML that invol",
+    "page": 25,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 108
+  },
+  {
+    "text": "se \nA query is a statement requesting the retrieval of information. The portion of a \nDML that involves information retrieval is called a query language. \n(2) Data-Definition Language (DDL) \nWe specify a database schema by a set of definitions expressed by a special \nlanguage called a data-definition language (DDL). The DDL is also used \nto specify additional properties of the data.",
+    "page": 25,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 109
+  },
+  {
+    "text": "2 \n   \n2 \n \nWe specify the storage structure and access methods used by the database \nsystem by a set of statements in a special type of DDL called a data \nstorage and definition language. These statements define the \nimplementation details of the database schemas, which are usually hidden \nfrom the users. \nThe data values stored in the database must satisfy certain consistency \nconstraints. \nA) Domain Constraints. A domain of possible values must be associated \nwith every attribute (for example",
+    "page": 26,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 110
+  },
+  {
+    "text": "omain Constraints. A domain of possible values must be associated \nwith every attribute (for example, integer types, character types, date/time \ntypes). Declaring an attribute to be of a particular domain acts as a \nconstraint on the values that it can take. Domain constraints are the most \nelementary form of integrity constraint. They are tested easily by the \nsystem whenever a new data item is entered into the database. \nB) Referential Integrity. There are cases where we wish to ensure that a ",
+    "page": 26,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 111
+  },
+  {
+    "text": "ntered into the database. \nB) Referential Integrity. There are cases where we wish to ensure that a \nvalue that appears in one relation for a given set of attributes also appears \nin a certain set of attributes in another relation (referential integrity). For \nexample, the department listed for each course must be one that actually \nexists. More precisely, the dept name value in a course record must appear \nin the dept name attribute of some record of the department relation. \nDatabase modificat",
+    "page": 26,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 112
+  },
+  {
+    "text": "st appear \nin the dept name attribute of some record of the department relation. \nDatabase modifications can cause violations of referential integrity. When \na referential-integrity constraint is violated, the normal procedure is to \nreject the action that caused the violation. \nC) Assertions. An assertion is any condition that the database must always \nsatisfy. Domain constraints and referential-integrity constraints are special \nforms of assertions. However, there are many constraints that we ",
+    "page": 26,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 113
+  },
+  {
+    "text": "integrity constraints are special \nforms of assertions. However, there are many constraints that we cannot",
+    "page": 26,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 114
+  },
+  {
+    "text": "3 \n   \n3 \n \nexpress by using only these special forms. For example, “Every department \nmust have at least five courses offered every semester” must be expressed \nas an assertion. When an assertion is created, the system tests it for \nvalidity. If the assertion is valid, then any future modification to the \ndatabase is allowed only if it does not cause that assertion to be violated. \nD) Authorization. We may want to differentiate among the users as far as \nthe type of access they are permitted on",
+    "page": 27,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 115
+  },
+  {
+    "text": "on. We may want to differentiate among the users as far as \nthe type of access they are permitted on various data values in the database. \nThese differentiations are expressed in terms of authorization, the most \ncommon being: read authorization, which allows reading, but not \nmodification, of data; insert authorization, which allows insertion of new \ndata, but not modification of existing data; update authorization, which \nallows modification, but not deletion, of data; and delete authorization",
+    "page": 27,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 116
+  },
+  {
+    "text": "pdate authorization, which \nallows modification, but not deletion, of data; and delete authorization, \nwhich allows deletion of data. We may assign the user all, none, or a \ncombination of these types of authorization. \n \n Data Dictionary \nWe can define a data dictionary as a DBMS component that stores the \ndefinition of data characteristics and relationships. You may recall that such \n“data about data” were labeled metadata. The DBMS data dictionary provides \nthe DBMS with its self-describing ",
+    "page": 27,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 117
+  },
+  {
+    "text": "t data” were labeled metadata. The DBMS data dictionary provides \nthe DBMS with its self-describing characteristic. \nThe two main types of data dictionary exist, integrated and stand alone. An \nintegrated data dictionary is included with the DBMS. For example, all \nrelational DBMSs include a built in data dictionary or system catalog that is \nfrequently accessed and updated by the RDBMS. Other DBMSs especially \nolder types, do not have a built in data dictionary instead the DBA may use",
+    "page": 27,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 118
+  },
+  {
+    "text": "4 \n   \n4 \n \nthird party stand-alone data dictionary systems. \nData dictionaries can also be classified as active or passive. An active data \ndictionary is automatically updated by the DBMS with every database access, \nthereby keeping its access information up-to-date. A passive data dictionary is \nnot updated automatically and usually requires a batch process to be run. Data \ndictionary access information is normally used by the DBMS for query \noptimization purpose. \nThe data dictionary’s main f",
+    "page": 28,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 119
+  },
+  {
+    "text": "ormation is normally used by the DBMS for query \noptimization purpose. \nThe data dictionary’s main function is to store the description of all objects \nthat interact with the database. Integrated data dictionaries tend to limit their \nmetadata to the data managed by the DBMS. Stand-alone data dictionary \nsystems are more usually more flexible and allow the DBA to describe and \nmanage all the organization’s data, whether or not they are computerized. \nWhatever the data dictionary’s format, its ex",
+    "page": 28,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 120
+  },
+  {
+    "text": "ization’s data, whether or not they are computerized. \nWhatever the data dictionary’s format, its existence provides database \ndesigners and end users with a much improved ability to communicate. In \naddition, the data dictionary is the tool that helps the DBA to resolve data \nconflicts. \n \n Database Administrators \nDatabase Administrator (DBA): is a person/team who defines the schema and \nalso controls the 3 levels of database. The DBA will then create a new account \nid and password for the us",
+    "page": 28,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 121
+  },
+  {
+    "text": "ontrols the 3 levels of database. The DBA will then create a new account \nid and password for the user if he/she needs to access the database.  \n DBA is also responsible for providing security to the database and he \nallows only the authorized users to access/modify the database. \n DBA also monitors the recovery and backup and provide technical",
+    "page": 28,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 122
+  },
+  {
+    "text": "5 \n   \n5 \n \nsupport. \n The DBA has a DBA account in the DBMS which called a system or \nsuper user account. \n DBA repairs damage caused due to hardware and/or software failures. \n \n Database Users and User Interfaces \nThere are four different types of database-system users, differentiated by the \nway they expect to interact with the system. Different types of user interfaces \nhave been designed for the different types of users. \n1- Naive users / End Users are unsophisticated users who interact",
+    "page": 29,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 123
+  },
+  {
+    "text": "for the different types of users. \n1- Naive users / End Users are unsophisticated users who interact with the \nsystem by invoking one of the application programs that have been written \npreviously. For example, a bank teller who needs to transfer $50 from \naccount A to account B invokes a program called transfer. This program \nasks the teller for the amount of money to be transferred, the account from \nwhich the money is to be transferred, and the account to which the money \nis to be transferred",
+    "page": 29,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 124
+  },
+  {
+    "text": "from \nwhich the money is to be transferred, and the account to which the money \nis to be transferred. \n2- Application programmers are computer professionals who write \napplication programs. Application programmers can choose from many \ntools to develop user interfaces. Rapid application development (RAD) \ntools are tools that enable an application programmer to construct forms \nand reports without writing a program. There are also special types of \nprogramming languages that combine imperative c",
+    "page": 29,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 125
+  },
+  {
+    "text": " writing a program. There are also special types of \nprogramming languages that combine imperative control structures (for \nexample, for loops, while loops and if-then-else statements) with \nstatements of the data manipulation language. These languages, sometimes \ncalled fourth-generation languages, often include special features to",
+    "page": 29,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 126
+  },
+  {
+    "text": "6 \n   \n6 \n \nfacilitate the generation of forms and the display of data on the screen. \nMost major commercial database systems include a fourth generation \nlanguage. \n3- Sophisticated users interact with the system without writing programs. \nInstead, they form their requests in a database query language. They submit \neach such query to a query processor, whose function is to break down \nDML statements into instructions that the storage manager understands. \nAnalysts who submit queries to explore ",
+    "page": 30,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 127
+  },
+  {
+    "text": "nts into instructions that the storage manager understands. \nAnalysts who submit queries to explore data in the database fall in this \ncategory. They use the tools to perform their task such as: \na- Online analytical processing (OLAP) tools simplify analysts’ tasks by \nletting them view summaries of data in different ways. For instance, an \nanalyst can see total sales by region (for example, North, South, East, \nand West), or by product, or by a combination of region and product \n(that is, total",
+    "page": 30,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 128
+  },
+  {
+    "text": ", South, East, \nand West), or by product, or by a combination of region and product \n(that is, total sales of each product in each region). The tools also permit \nthe analyst to select specific regions, look at data in more detail (for \nexample, sales by city within a region) or look at the data in less detail \n(for example, aggregate products together by category). \nb- Another class of tools for analysts is data mining tools, which help \nthem, find certain kinds of patterns in data. \n4- Special",
+    "page": 30,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 129
+  },
+  {
+    "text": "analysts is data mining tools, which help \nthem, find certain kinds of patterns in data. \n4- Specialized users are sophisticated users who write specialized database \napplications that do not fit into the traditional data-processing framework. \nAmong these applications are computer-aided design systems, knowledge base \nand expert systems, systems that store data with complex data types (for \nexample, graphics data and audio data), and environment-modeling systems.",
+    "page": 30,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 130
+  },
+  {
+    "text": "1 \n \nLec 6 \nDatabase Architecture: \nThe architecture of a database system is greatly influenced by the underlying computer \nsystem on which the database system runs. Database systems can be centralized, or client-\nserver, where one server machine executes work on behalf of multiple client machines. \nDatabase systems can also be designed to exploit parallel computer architectures. \nDistributed databases span multiple geographically separated machines. \n \nDatabase System Architecture \nA database s",
+    "page": 31,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 131
+  },
+  {
+    "text": "bases span multiple geographically separated machines. \n \nDatabase System Architecture \nA database system is partitioned into modules that deal with each of the responsibilities of \nthe overall system. The functional components of a database system can be broadly divided \ninto the storage manager and the query processor components. The storage manager is \nimportant because databases typically require a large amount of storage space. The query \nprocessor is important because it helps the database",
+    "page": 31,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 132
+  },
+  {
+    "text": "ire a large amount of storage space. The query \nprocessor is important because it helps the database system simplify and facilitate access to \ndata.",
+    "page": 31,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 133
+  },
+  {
+    "text": "2 \n \nIt is the job of the database system to translate updates and queries written in a \nnonprocedural language, at the logical level, into an efficient sequence of operations at the \nphysical level. \nDatabase applications are usually partitioned into two or three parts, as in Figure 1.4. In \ntwo-tier architecture, the application resides at the client machine, where it invokes \ndatabase system functionality at the server machine through query language statements. \nApplication program interface ",
+    "page": 32,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 134
+  },
+  {
+    "text": "nctionality at the server machine through query language statements. \nApplication program interface standards like ODBC and JDBC are used for interaction \nbetween the client and the server. In contrast, in a three-tier architecture, the client machine \nacts as merely a front end and does not contain any direct database calls. Instead, the client \nend communicates with an application server, usually through a forms interface. \nThe application server in turn communicates with a database system to ",
+    "page": 32,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 135
+  },
+  {
+    "text": "y through a forms interface. \nThe application server in turn communicates with a database system to access data. The \nbusiness logic of the application, which says what actions to carry out under what \nconditions, is embedded in the application server, instead of being distributed across \nmultiple clients. Three-tier applications are more appropriate for large applications, and for \napplications that run on the WorldWideWeb. \n \nTwo-tier and three-tier architectures.",
+    "page": 32,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 136
+  },
+  {
+    "text": "3 \n \nQuery Processor: \nThe query processor components include \nDDL interpreter, which interprets DDL statements and records the definitions in the data \ndictionary. \nDML compiler, which translates DML statements in a query language into an evaluation \nplan consisting of low-level instructions that the query evaluation engine understands. \nA query can usually be translated into any of a number of alternative evaluation plans that \nall give the same result. The DML compiler also performs query opt",
+    "page": 33,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 137
+  },
+  {
+    "text": "lternative evaluation plans that \nall give the same result. The DML compiler also performs query optimization, that is, it \npicks the lowest cost evaluation plan from among the alternatives. \nQuery evaluation engine, which executes low-level instructions generated by the DML \ncompiler. \nStorage Manager: \nA storage manager is a program module that provides the interface between the lowlevel \ndata stored in the database and the application programs and queries submitted to the \nsystem. The storage",
+    "page": 33,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 138
+  },
+  {
+    "text": "tored in the database and the application programs and queries submitted to the \nsystem. The storage manager is responsible for the interaction with the file manager. The \nraw data are stored on the disk using the file system, which is usually provided by a \nconventional operating system. The storage manager translates the various DML \nstatements into low-level file-system commands. Thus, the storage manager is responsible \nfor storing, retrieving, and updating data in the database. \nThe storage",
+    "page": 33,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 139
+  },
+  {
+    "text": "age manager is responsible \nfor storing, retrieving, and updating data in the database. \nThe storage manager components include: \nAuthorization and integrity manager, which tests for the satisfaction of integrity \nconstraints and checks the authority of users to access data. \nTransaction manager, which ensures that the database remains in a consistent (correct) \nstate despite system failures, and that concurrent transaction executions proceed without \nconflicting. \nFile manager, which manages th",
+    "page": 33,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 140
+  },
+  {
+    "text": "that concurrent transaction executions proceed without \nconflicting. \nFile manager, which manages the allocation of space on disk storage and the data \nstructures used to represent information stored on disk.",
+    "page": 33,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 141
+  },
+  {
+    "text": "4 \n \nBuffer manager, which is responsible for fetching data from disk storage into main \nmemory, and deciding what data to cache in main memory. The buffer manager is a critical \npart of the database system, since it enables the database to handle data sizes that are much \nlarger than the size of main memory. \nTransaction Manager: \nA transaction is a collection of operations that performs a single logical function in a \ndatabase application. Each transaction is a unit of both atomicity and consi",
+    "page": 34,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 142
+  },
+  {
+    "text": " logical function in a \ndatabase application. Each transaction is a unit of both atomicity and consistency. Thus, we \nrequire that transactions do not violate any database-consistency constraints. That is, if the \ndatabase was consistent when a transaction started, the database must be consistent when \nthe transaction successfully terminates. Transaction - manager ensures that the database \nremains in a consistent (correct) state despite system failures (e.g., power failures and \noperating syste",
+    "page": 34,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 143
+  },
+  {
+    "text": "s in a consistent (correct) state despite system failures (e.g., power failures and \noperating system crashes) and transaction failures. \nConceptual Database Design - Entity Relationship(ER) Modeling: \nDatabase Design Techniques \n1. \nER Modeling (Top down Approach) \n2. \nNormalization (Bottom Up approach) \n \nWhat is ER Modeling? \nA graphical technique for understanding and organizing the data independent of the actual \ndatabase implementation \nWe need to be familiar with the following terms to go",
+    "page": 34,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 144
+  },
+  {
+    "text": "endent of the actual \ndatabase implementation \nWe need to be familiar with the following terms to go further. \nEntity \nAny thing that has an independent existence and about which we collect data. It is also \nknown as entity type. In ER modeling, notation for entity is given below.",
+    "page": 34,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 145
+  },
+  {
+    "text": "5 \n \nEntity instance \nEntity instance is a particular member of the entity type. Example for entity instance : A \nparticular employee Regular Entity \nAn entity which has its own key attribute is a regular entity. Example for regular entity : \nEmployee. \nWeak entity \nAn entity which depends on other entity for its existence and doesn't have any key attribute \nof its own is a weak entity. \nExample for a weak entity: In a parent/child relationship, a parent is considered as a strong \nentity and the",
+    "page": 35,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 146
+  },
+  {
+    "text": "or a weak entity: In a parent/child relationship, a parent is considered as a strong \nentity and the child is a weak entity. \nIn ER modeling, notation for weak entity is given below. \n \nAttributes \nProperties/characteristics which describe entities are called attributes. In ER modeling, \nnotation for attribute is given below. \n \nDomain of Attributes \nThe set of possible values that an attribute can take is called the domain of the attribute. \nFor example, the attribute day may take any value fro",
+    "page": 35,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 147
+  },
+  {
+    "text": "n take is called the domain of the attribute. \nFor example, the attribute day may take any value from the set {Monday, Tuesday ... \nFriday}. Hence this set can be termed as the domain of the attribute day.",
+    "page": 35,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 148
+  },
+  {
+    "text": "6 \n \nKey attribute \nThe attribute (or combination of attributes) which is unique for every entity instance is \ncalled key attribute. \nE.g the employee_id of an employee, pan_card_number of a person etc.If the key attribute \nconsists of two or more attributes in combination, it is called a composite key. \n \nIn ER modeling, notation for key attribute is given below. \nSimple attribute \nIf an attribute cannot be divided into simpler components, it is a simple attribute. Example \nfor simple attribute",
+    "page": 36,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 149
+  },
+  {
+    "text": "e cannot be divided into simpler components, it is a simple attribute. Example \nfor simple attribute : employee_id of an employee. \nComposite attribute \nIf an attribute can be split into components, it is called a composite attribute. \nExample for composite attribute : Name of the employee which can be split into \nFirst_name, Middle_name, and Last_name. \nSingle valued Attributes \nIf an attribute can take only a single value for each entity instance, it is a single valued \nattribute. example for ",
+    "page": 36,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 150
+  },
+  {
+    "text": "an take only a single value for each entity instance, it is a single valued \nattribute. example for single valued attribute : age of a student. It can take only one value \nfor a particular student. \nMulti-valued Attributes \nIf an attribute can take more than one value for each entity instance, it is a multi-valued \nattribute. Multi-valued \nexample for multi valued attribute : telephone number of an employee, a particular \nemployee may have multiple telephone numbers.",
+    "page": 36,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 151
+  },
+  {
+    "text": "7 \n \n \n \nIn ER modeling, notation for multi-valued attribute is given below. \nStored Attribute \nAn attribute which need to be stored permanently is a stored attribute Example for stored \nattribute : name of a student \nDerived Attribute \nAn attribute which can be calculated or derived based on other attributes is a derived \nattribute. \nExample for derived attribute : age of employee which can be calculated from date of birth \nand current date. In ER modeling, notation for derived attribute is giv",
+    "page": 37,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 152
+  },
+  {
+    "text": "lculated from date of birth \nand current date. In ER modeling, notation for derived attribute is given below. \n \n \nRelationships \nAssociations between entities are called relationships \nExample : An employee works for an organization. Here \"works for\" is a relation between \nthe entities employee and organization.",
+    "page": 37,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 153
+  },
+  {
+    "text": "8 \n \nIn ER modeling, notation for relationship is given below. \nHowever in ER Modeling, To connect a weak Entity with others, you should use a weak \nrelationship notation as given below \n \n \nDegree of a Relationship \nDegree of a relationship is the number of entity types involved. The n-ary relationship is \nthe general form for degree n. Special cases are unary, binary, and ternary ,where the \ndegree is 1, 2, and 3, respectively. \nExample for unary relationship : An employee ia a manager of anot",
+    "page": 38,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 154
+  },
+  {
+    "text": "ree is 1, 2, and 3, respectively. \nExample for unary relationship : An employee ia a manager of another employee Example \nfor binary relationship : An employee works-for department. \nExample for ternary relationship : customer purchase item from a shop keeper \nCardinality of a Relationship \nRelationship cardinalities specify how many of each entity type is allowed. Relationships \ncan have four possible connectivities as given below. \n1. \nOne to one (1:1) relationship \n2. \nOne to many (1:N) relat",
+    "page": 38,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 155
+  },
+  {
+    "text": "sible connectivities as given below. \n1. \nOne to one (1:1) relationship \n2. \nOne to many (1:N) relationship \n3. \nMany to one (M:1) relationship",
+    "page": 38,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 156
+  },
+  {
+    "text": "9 \n \n4. \nMany to many (M:N) relationship \nThe minimum and maximum values of this connectivity is called the cardinality of the \nrelationship \nExample for Cardinality – One-to-One (1:1) \nEmployee is assigned with a parking space. \nOne employee is assigned with only one parking space and one parking space is assigned \nto only one employee. Hence it is a 1:1 relationship and cardinality is One-To-One (1:1) \nIn ER modeling, this can be mentioned using notations as given below \n \n \n \nExample for Card",
+    "page": 39,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 157
+  },
+  {
+    "text": " (1:1) \nIn ER modeling, this can be mentioned using notations as given below \n \n \n \nExample for Cardinality – One-to-Many (1:N)",
+    "page": 39,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 158
+  },
+  {
+    "text": "10 \n \nOrganization has employees \nOne organization can have many employees , but one employee works in only one \norganization. Hence it is a 1:N relationship and cardinality is One-To-Many (1:N) \nIn ER modeling, this can be mentioned using notations as given below \nExample for Cardinality – Many-to-One (M :1) \nIt is the reverse of the One to Many relationship. employee works in organization \nOne employee works in only one organization But one organization can have many \nemployees. Hence it is a ",
+    "page": 40,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 159
+  },
+  {
+    "text": "mployee works in only one organization But one organization can have many \nemployees. Hence it is a M:1 relationship and cardinality is Many-to-One (M :1)",
+    "page": 40,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 160
+  },
+  {
+    "text": "11 \n \nIn ER modeling, this can be mentioned using notations as given below. \nCardinality – Many-to-Many (M:N) \nStudents enrolls for courses \nOne student can enroll for many courses and one course can be enrolled by \nmany students. Hence it is a M:N relationship and cardinality is Many-to-\nMany (M:N) \nIn ER modeling, this can be mentioned using notations as given below",
+    "page": 41,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 161
+  },
+  {
+    "text": "12 \n \nRelationship Participation \n1. Total \nIn total participation, every entity instance will be connected through the \nrelationship to another instance of the other participating entity types \n2. Partial \nExample for relationship participation \nConsider the relationship - Employee is head of the department. \nHere all employees will not be the head of the department. Only one \nemployee will be the head of the department. In other words, only few \ninstances of employee entity participate in the ",
+    "page": 42,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 162
+  },
+  {
+    "text": "e head of the department. In other words, only few \ninstances of employee entity participate in the above relationship. So \nemployee entity's participation is partial in the said relationship. \nHowever each department will be headed by some employee. So department \nentity's participation is total in the said relationship. \n \nAdvantages and Disadvantages of ER Modeling \nAdvantages \n1. ER Modeling is simple and easily understandable. It is represented in \nbusiness users language and it can be unde",
+    "page": 42,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 163
+  },
+  {
+    "text": "s simple and easily understandable. It is represented in \nbusiness users language and it can be understood by non-technical \nspecialist. \n2. Intuitive and helps in Physical Database creation. \n3. Can be generalized and specialized based on needs.",
+    "page": 42,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 164
+  },
+  {
+    "text": "13 \n \n4. Can help in database design. \n5. Gives a higher level description of the system. \nDisadvantages \n1. Physical design derived from E-R Model may have some amount of \nambiguities or inconsistency. \n2. Sometime diagrams may lead to misinterpretations",
+    "page": 43,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 165
+  },
+  {
+    "text": "Lec 7 \nRelational Model \nStructure of Relational Databases: \nA relational database consists of a collection of tables, each of which is \nassigned a unique name. For example, consider the instructor table of \nFigure 1, 2, and 3.  \n \nFigure 1: The instructor relation \nIn general, a row in a table represents a relationship among a set of \nvalues. Since a table is a collection of such relationships, there is a close \ncorrespondence between the concept of table and the mathematical \nconcept of relati",
+    "page": 44,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 166
+  },
+  {
+    "text": "here is a close \ncorrespondence between the concept of table and the mathematical \nconcept of relation, from which the relational data model takes its name. \nIn mathematical terminology, a tuple is simply a sequence (or list) of \nvalues. A relationship between n values is represented mathematically by \nan n-tuple of values, i.e., a tuple with n values, which corresponds to a \nrow in a table.",
+    "page": 44,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 167
+  },
+  {
+    "text": "Figure 2: The course relation \n \nFigure 3: The prereq relation. \nThus, in the relational model the term relation is used to refer to a table, \nwhile the term tuple is used to refer to a row. Similarly, the term \nattribute refers to a column of a table. \nExamining Figure 1, we can see that the relation instructor has four \nattributes: \nID, name, dept name, and salary. \nWe use the term relation instance to refer to a specific instance of a \nrelation, i.e., containing a specific set of rows. The in",
+    "page": 45,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 168
+  },
+  {
+    "text": "ance to refer to a specific instance of a \nrelation, i.e., containing a specific set of rows. The instance of \ninstructor shown in Figure 1 has 12 tuples, corresponding to 12 \ninstructors.",
+    "page": 45,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 169
+  },
+  {
+    "text": "The order in which tuples appear in a relation is irrelevant, since a \nrelation is a set of tuples. Thus, whether the tuples of a relation are listed \nin sorted order, as in Figure 1, or are unsorted, as in Figure 4, does not \nmatter; the relations in the two figures are the same, since both contain \nthe same set of tuples. For ease of exposition, we will mostly show the \nrelations sorted by their first attribute. For each attribute of a relation, \nthere is a set of permitted values, called the ",
+    "page": 46,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 170
+  },
+  {
+    "text": " first attribute. For each attribute of a relation, \nthere is a set of permitted values, called the domain of that attribute. \nThus, the domain of the salary attribute of the instructor relation is the \nset of all possible salary values, while the domain of the name attribute is \nthe set of all possible instructor names. \n \nFigure 4: Unsorted display of the instructor relation. \n \nThe null value is a special value that signifies that the value is unknown \nor does not exist. For example, suppose ",
+    "page": 46,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 171
+  },
+  {
+    "text": "s a special value that signifies that the value is unknown \nor does not exist. For example, suppose as before that we include the \nattribute phone number in the instructor relation. It may be that an \ninstructor does not have a phone number at all, or that the telephone \nnumber is unlisted.",
+    "page": 46,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 172
+  },
+  {
+    "text": "Database Schema \nWhen we talk about a database, we must differentiate between the \ndatabase schema, which is the logical design of the database, and the \ndatabase instance, which is a snapshot of the data in the database at a \ngiven instant in time.  \nFigure 5: The department relation. \nConsider the department relation of Figure 5. The schema for that relation \nis \ndepartment (dept name, building, budget) \nNote that the attribute dept name appears in both the instructor schema \nand the departmen",
+    "page": 47,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 173
+  },
+  {
+    "text": " budget) \nNote that the attribute dept name appears in both the instructor schema \nand the department schema. Using common attributes in relation \nschemas is one way of relating tuples of distinct relations. \nA superkey is a set of one or more attributes that, taken collectively, \nallow us to identify uniquely a tuple in the relation. For example, the ID \nattribute of the relation instructor is sufficient to distinguish one \ninstructor tuple from another. Thus, ID is a superkey. The name attribu",
+    "page": 47,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 174
+  },
+  {
+    "text": "fficient to distinguish one \ninstructor tuple from another. Thus, ID is a superkey. The name attribute \nof instructor, on the other hand, is not a superkey, because several \ninstructors might have the same name. \nIt is possible that several distinct sets of attributes could serve as a \ncandidate key. Suppose that a combination of name and dept name is \nsufficient to distinguish among members of the instructor relation. Then, \nboth {ID} and {name, dept name} are candidate keys. Although the \nattr",
+    "page": 47,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 175
+  },
+  {
+    "text": "e instructor relation. Then, \nboth {ID} and {name, dept name} are candidate keys. Although the \nattributes ID and name together can distinguish instructor tuples, their \ncombination, {ID, name}, does not form a candidate key, since the \nattribute ID alone is a candidate key.",
+    "page": 47,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 176
+  },
+  {
+    "text": "We shall use the term primary key to denote a candidate key that is \nchosen by the database designer as the principal means of identifying \ntuples within a relation.  \nIt is customary to list the primary key attributes of a relation schema \nbefore the other attributes; for example, the dept name attribute of \ndepartment is listed first, since it is the primary key. Primary key \nattributes are also underlined. A relation, say r1, may include among its \nattributes the primary key of another relati",
+    "page": 48,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 177
+  },
+  {
+    "text": " underlined. A relation, say r1, may include among its \nattributes the primary key of another relation, say r2. This attribute is \ncalled a foreign key from r1, referencing r2. \n \nSchema Diagrams \nA database schema, along with primary key and foreign key \ndependencies, can be depicted by schema diagrams. Figure 6 shows the \nschema diagram for our university organization. Each relation appears as \na box, with the relation name at the top in blue, and the attributes listed \ninside the box. Primary",
+    "page": 48,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 178
+  },
+  {
+    "text": "a box, with the relation name at the top in blue, and the attributes listed \ninside the box. Primary key attributes are shown underlined. Foreign key \ndependencies appear as arrows from the foreign key attributes of the \nreferencing relation to the primary key of the referenced relation.",
+    "page": 48,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 179
+  },
+  {
+    "text": "Figure 6 : Schema diagram for the university database.",
+    "page": 49,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 180
+  },
+  {
+    "text": "1 \n \nStructured Query Language (SQL) \nA database most often contains one or more tables. Each table is identified \nby a name (e.g. \"Customers\" or \"Orders\"). Tables contain records (rows) \nwith data. \nBelow is a selection from the \"Customers\" table: \nCustome\nrID \nCustomerN\name \nContactN\name \nAddress \nCity \nPostalC\node \nCount\nry \n1 \n \nAlfreds \nFutterkiste \nMaria \nAnders \nObere Str. \n57 \nBerli\nn \n12209 \nGerma\nny \n2 \nAna Trujillo \nEmparedad\nos y helados \nAna \nTrujillo \nAvda. de \nla \nConstituci\nón 22",
+    "page": 50,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 181
+  },
+  {
+    "text": "09 \nGerma\nny \n2 \nAna Trujillo \nEmparedad\nos y helados \nAna \nTrujillo \nAvda. de \nla \nConstituci\nón 2222 \nMéxi\nco \nD.F. \n05021 \nMexic\no \n3 \nAntonio \nMoreno \nTaquería \nAntonio \nMoreno \nMataderos \n2312 \nMéxi\nco \nD.F. \n05023 \nMexic\no \n4 \n \nAround the \nHorn \nThomas \nHardy \n120 \nHanover \nSq. \nLond\non \nWA1 \n1DP \nUK \n5 \nBerglunds \nsnabbköp \nChristina \nBerglund \nBerguvsv\nägen 8 \nLuleå S-958 \n22 \nSwede\nn \n \nThe table above contains five records (one for each customer) and seven \ncolumns (CustomerID, Custom",
+    "page": 50,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 182
+  },
+  {
+    "text": "The table above contains five records (one for each customer) and seven \ncolumns (CustomerID, CustomerName, ContactName, Address, City, \nPostalCode, and Country). \nSQL Statements \nMost of the actions you need to perform on a database are done with SQL \nstatements. \nThe following SQL statement selects all the records in the \"Customers\" \ntable: \nExample \nSELECT * FROM Customers;",
+    "page": 50,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 183
+  },
+  {
+    "text": "2 \n \nKeep in Mind That... \n SQL keywords are NOT case sensitive: select is the same as SELECT \n Semicolon after SQL Statements, some database systems require a \nsemicolon at the end of each SQL statement. Semicolon is the \nstandard way to separate each SQL statement in database systems that \nallow more than one SQL statement to be executed in the same call to \nthe server. \nSome of the Most Important SQL Commands \n SELECT - extracts data from a database \n UPDATE - updates data in a database \n",
+    "page": 51,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 184
+  },
+  {
+    "text": "tant SQL Commands \n SELECT - extracts data from a database \n UPDATE - updates data in a database \n DELETE - deletes data from a database \n INSERT INTO - inserts new data into a database \n CREATE DATABASE - creates a new database \n ALTER DATABASE - modifies a database \n CREATE TABLE - creates a new table \n ALTER TABLE - modifies a table \n DROP TABLE - deletes a table \n CREATE INDEX - creates an index (search key) \n DROP INDEX - deletes an index \n \n \nSQL SELECT Statement \nThe SELECT sta",
+    "page": 51,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 185
+  },
+  {
+    "text": "tes an index (search key) \n DROP INDEX - deletes an index \n \n \nSQL SELECT Statement \nThe SELECT statement is used to select data from a database.",
+    "page": 51,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 186
+  },
+  {
+    "text": "3 \n \nThe data returned is stored in a result table, called the result-set. \nSELECT Syntax \nSELECT column1, column2, ... \nFROM table_name; \n \nHere, column1, column2, ... are the field names of the table you want to \nselect data from. If you want to select all the fields available in the table, use \nthe following syntax: \nSELECT * FROM table_name; \n \nExample \nSELECT CustomerName, City FROM Customers; \nSELECT * FROM Customers;",
+    "page": 52,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 187
+  },
+  {
+    "text": "1 \n \nStructured Query Language (SQL) \n \nThe SQL WHERE Clause \n \nThe WHERE clause is used to filter records. \nIt is used to extract only those records that fulfill a specified condition. \n \nSELECT column1, column2, ... \nFROM table_name \nWHERE condition; \n \nNote: The WHERE clause is not only used in SELECT statements, it is also \nused in UPDATE, DELETE, etc.! \n \nExample \nThe following SQL statement selects all the customers from the country \n\"Mexico\", in the \"Customers\" table: \n \nSELECT * FROM Cus",
+    "page": 53,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 188
+  },
+  {
+    "text": "selects all the customers from the country \n\"Mexico\", in the \"Customers\" table: \n \nSELECT * FROM Customers \nWHERE Country='Mexico'; \n \nHowever, numeric fields should not be enclosed in quotes: \nExample \nSELECT * FROM Customers \nWHERE CustomerID=1;",
+    "page": 53,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 189
+  },
+  {
+    "text": "2 \n \nThe SQL ORDER BY Keyword \n \nThe ORDER BY keyword is used to sort the result-set in ascending or \ndescending order. \n \nThe ORDER BY keyword sorts the records in ascending order by default. \nTo sort the records in descending order, use the DESC keyword. \n \nSELECT column1, column2, ... \nFROM table_name \nORDER BY column1, column2, ... ASC|DESC; \n \nExample \nThe following SQL statement selects all customers from the \"Customers\" \ntable, sorted by the \"Country\" column: \n \nSELECT * FROM Customers \nO",
+    "page": 54,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 190
+  },
+  {
+    "text": "customers from the \"Customers\" \ntable, sorted by the \"Country\" column: \n \nSELECT * FROM Customers \nORDER BY Country; \n \nDESC Example \nThe following SQL statement selects all customers from the \"Customers\" \ntable, sorted DESCENDING by the \"Country\" column: \n \nSELECT * FROM Customers \nORDER BY Country DESC; \n \nSeveral Columns Example \nThe following SQL statement selects all customers from the \"Customers\" \ntable, sorted by the \"Country\" and the \"CustomerName\" column. This means \nthat it orders by C",
+    "page": 54,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 191
+  },
+  {
+    "text": "mers\" \ntable, sorted by the \"Country\" and the \"CustomerName\" column. This means \nthat it orders by Country, but if some rows have the same Country, it orders \nthem by CustomerName: \n \nSELECT * FROM Customers \nORDER BY Country, CustomerName;",
+    "page": 54,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 192
+  },
+  {
+    "text": "3 \n \nThe SQL INSERT INTO Statement \n \nThe INSERT INTO statement is used to insert new records in a table. \n \nIt is possible to write the INSERT INTO statement in two ways: \n \n1. Specify both the column names and the values to be inserted: \n \nINSERT INTO table_name (column1, column2, column3, ...) \nVALUES (value1, value2, value3, ...); \n \n2. If you are adding values for all the columns of the table, you do not need \nto specify the column names in the SQL query. However, make sure the \norder of th",
+    "page": 55,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 193
+  },
+  {
+    "text": ", you do not need \nto specify the column names in the SQL query. However, make sure the \norder of the values is in the same order as the columns in the table. Here, the \nINSERT INTO syntax would be as follows: \n \nINSERT INTO table_name \nVALUES (value1, value2, value3, ...); \n \nExample \n \nThe following SQL statement inserts a new record in the \"Customers\" table: \n \nINSERT INTO Customers (CustomerName, ContactName, Address, City, \nPostalCode, Country) \nVALUES ('Cardinal', 'Tom B. Erichsen', 'Skage",
+    "page": 55,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 194
+  },
+  {
+    "text": "me, ContactName, Address, City, \nPostalCode, Country) \nVALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', \n'Norway'); \n \nINSERT INTO Customers (CustomerName, City, Country) \nVALUES ('Cardinal', 'Stavanger', 'Norway');",
+    "page": 55,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 195
+  },
+  {
+    "text": "4 \n \n \nThe SQL UPDATE Statement \n \nThe UPDATE statement is used to modify the existing records in a table. \n \nUPDATE table_name \nSET column1 = value1, column2 = value2, ... \nWHERE condition; \n \nNote: Be careful when updating records in a table! Notice the WHERE \nclause in the UPDATE statement. The WHERE clause specifies which \nrecord(s) that should be updated. If you omit the WHERE clause, all records \nin the table will be updated! \n \nExample \n \nUPDATE Customers \nSET ContactName = 'Alfred Schmid",
+    "page": 56,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 196
+  },
+  {
+    "text": "ords \nin the table will be updated! \n \nExample \n \nUPDATE Customers \nSET ContactName = 'Alfred Schmidt', City= 'Frankfurt' \nWHERE CustomerID = 1; \n \nUPDATE Multiple Records \n \nIt is the WHERE clause that determines how many records will be updated. \n \nThe following SQL statement will update the ContactName to \"Juan\" for all \nrecords where country is \"Mexico\": \n \nExample \n \nUPDATE Customers \nSET ContactName='Juan' \nWHERE Country='Mexico';",
+    "page": 56,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 197
+  },
+  {
+    "text": "5 \n \nThe SQL DELETE Statement \n \nThe DELETE statement is used to delete existing records in a table. \n \nDELETE FROM table_name WHERE condition; \n \nNote: Be careful when deleting records in a table! Notice the WHERE \nclause in the DELETE statement. The WHERE clause specifies which \nrecord(s) should be deleted. If you omit the WHERE clause, all records in \nthe table will be deleted! \n \nExample \n \nThe following SQL statement deletes the customer \"Alfreds Futterkiste\" \nfrom the \"Customers\" table: \n ",
+    "page": 57,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 198
+  },
+  {
+    "text": "e following SQL statement deletes the customer \"Alfreds Futterkiste\" \nfrom the \"Customers\" table: \n \nDELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste'; \n \nDelete All Records \n \nIt is possible to delete all rows in a table without deleting the table. This \nmeans that the table structure, attributes, and indexes will be intact: \n \nDELETE FROM table_name; \n \nExample \n \nDELETE FROM Customers;",
+    "page": 57,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 199
+  },
+  {
+    "text": "6 \n \nThe SQL MIN() and MAX() Functions \n \nThe MIN() function returns the smallest value of the selected column. \n \nThe MAX() function returns the largest value of the selected column. \n \nSELECT MIN(column_name) \nFROM table_name \nWHERE condition; \n \nSELECT MAX(column_name) \nFROM table_name \nWHERE condition; \n \nMIN() Example \n \nThe following SQL statement finds the price of the cheapest product: \n \nSELECT MIN(Price) AS SmallestPrice \nFROM Products; \n \nMAX() Example \n \nThe following SQL statement f",
+    "page": 58,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 200
+  },
+  {
+    "text": "SELECT MIN(Price) AS SmallestPrice \nFROM Products; \n \nMAX() Example \n \nThe following SQL statement finds the price of the most expensive product: \n \nSELECT MAX(Price) AS LargestPrice \nFROM Products;",
+    "page": 58,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 201
+  },
+  {
+    "text": "7 \n \nThe SQL COUNT(), AVG() and SUM() Functions \n \nThe COUNT() function returns the number of rows that matches a specified \ncriterion. \n \nSELECT COUNT(column_name) \nFROM table_name \nWHERE condition; \n \nThe AVG() function returns the average value of a numeric column.  \n \nSELECT AVG(column_name) \nFROM table_name \nWHERE condition; \n \nThe SUM() function returns the total sum of a numeric column.  \n \nSELECT SUM(column_name) \nFROM table_name \nWHERE condition; \n \nCOUNT() Example \n \nThe following SQL ",
+    "page": 59,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 202
+  },
+  {
+    "text": "\nSELECT SUM(column_name) \nFROM table_name \nWHERE condition; \n \nCOUNT() Example \n \nThe following SQL statement finds the number of products: \n \nSELECT COUNT(ProductID) \nFROM Products; \n \nAVG() Example \n \nThe following SQL statement finds the average price of all products: \n \nSELECT AVG(Price) \nFROM Products;",
+    "page": 59,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 203
+  },
+  {
+    "text": "8 \n \nNote: NULL values are ignored. \n \nSUM() Example \n \nThe following SQL statement finds the sum of the \"Quantity\" fields in the \n\"OrderDetails\" table: \n \nSELECT SUM(Quantity) \nFROM OrderDetails; \n \nNote: NULL values are ignored.",
+    "page": 60,
+    "source": "dbms.pdf",
+    "type": "pdf",
+    "id": 204
+  },
+  {
+    "text": "DATABASE MANAGEMENT SYSTEMS\nLecture Notes  ·  Concepts, Architecture, ER Modeling & SQL Fundamentals\n\n2nd Class, CS Department  ·  1st Semester",
+    "page": 1,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 205
+  },
+  {
+    "text": "From Raw Data to a Database\nBuilding meaning, one layer at a time\n\n\n\n1\nDATA\nRaw facts with no meaning on their own\n\n01   ABC   19\n\n\n\n\n2\nRECORD\nRelated data items organized together\n\nRoll 01 | Name ABC | Age 19\n\n\n\n\n3\nTABLE / RELATION\nA collection of related records\n\n3 student rows, same columns\n\n\n\n\n4\nDATABASE\nA collection of related tables\n\nStudents + Address + Year + Hostel\nA database is a related collection of tables, connected through common attributes (e.g. Roll No.), that lets us answer ques",
+    "page": 2,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 206
+  },
+  {
+    "text": " collection of tables, connected through common attributes (e.g. Roll No.), that lets us answer questions spanning multiple tables.\n2\nDBMS · Unit One",
+    "page": 2,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 207
+  },
+  {
+    "text": "Why Not Just Use Files?\nThe problems that gave rise to database management systems\n\nFILE-ORIENTED SYSTEM — DISADVANTAGES\n\nData Redundancy\nSame data duplicated across files, wasting space and risking inconsistency\n\nDifficult Access\nNo flexible way to retrieve data beyond pre-written programs\n\nData Isolation\nScattered files in different formats make new programs hard to write\n\nHOW A DBMS SOLVES IT\n\nCentralized Control\nOne managed repository removes duplication and keeps data consistent\n\nQuery Lang",
+    "page": 3,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 208
+  },
+  {
+    "text": "Centralized Control\nOne managed repository removes duplication and keeps data consistent\n\nQuery Language (SQL)\nDeclarative retrieval — describe what you need, not how to fetch it\n\nUnified Schema\nA single logical structure links all related data together\n\n\nConcurrency Issues\nSimultaneous updates can corrupt or lose data\n\nWeak Integrity\nConstraints are buried in application code, hard to enforce or change\n\n\nAuthorization Rules\nFine-grained read/insert/update/delete permissions per user\n\nTransactio",
+    "page": 3,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 209
+  },
+  {
+    "text": "change\n\n\nAuthorization Rules\nFine-grained read/insert/update/delete permissions per user\n\nTransaction Manager\nGuarantees atomicity & consistency, even after a crash\n3\nDBMS · Unit One",
+    "page": 3,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 210
+  },
+  {
+    "text": "Why Choose a DBMS?\nKey advantages of centralized data management\n\n\n1\nControlled Redundancy\nCentralized data avoids duplicate storage and saves space\n\n\n2\nImproved Data Sharing\nMany applications and users can access the same data\n\n\n3\nData Integrity\nConstraints ensure stored data stays accurate and valid\n\n\n4\nStronger Security\nThe DBA restricts access through proper authorization channels\n\n\n5\nData Consistency\nEliminating redundancy removes conflicting copies of data\n\n\n6\nData Independence\nPhysical st",
+    "page": 4,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 211
+  },
+  {
+    "text": "sistency\nEliminating redundancy removes conflicting copies of data\n\n\n6\nData Independence\nPhysical storage changes don't break application programs\n4\nDBMS · Unit One",
+    "page": 4,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 212
+  },
+  {
+    "text": "Three Levels of Data Abstraction\nHiding complexity so every kind of user can work efficiently\n\nThree Levels of Data Abstraction\nHiding complexity so every kind of user can work efficiently\n\nVIEW LEVEL\nExternal Schema\nDescribes only the part of the database a specific user sees (e.g. a registrar clerk sees students, not salaries).\n\nLOGICAL LEVEL\nConceptual Schema\nDescribes what data is stored and the relationships among it. Used by DBAs and programmers.\n\nPHYSICAL LEVEL\nInternal Schema\nDescribes h",
+    "page": 5,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 213
+  },
+  {
+    "text": "he relationships among it. Used by DBAs and programmers.\n\nPHYSICAL LEVEL\nInternal Schema\nDescribes how data is actually stored — low-level structures, indexes, and files on disk.\nInstance: the data stored at a given moment.   Schema: the overall (rarely-changing) design of the database.\n5\nDBMS · Unit One",
+    "page": 5,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 214
+  },
+  {
+    "text": "Data Models & Database Languages\nThe conceptual tools and languages behind every DBMS\nDATA MODELS\n\n\nRelational Model\nData & relationships as tables (rows/columns) — most widely used\n\n\nEntity-Relationship (E-R)\nEntities and relationships — used heavily in database design\n\n\nObject-Based Model\nExtends E-R with encapsulation, methods, and object identity\n\n\nSemi-Structured Model\nItems of the same type may have different attributes (e.g. XML)\nDATABASE LANGUAGES\n\nDDL — Data Definition Language\nDefines ",
+    "page": 6,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 215
+  },
+  {
+    "text": "may have different attributes (e.g. XML)\nDATABASE LANGUAGES\n\nDDL — Data Definition Language\nDefines the schema and constraints: tables, domains, referential integrity, assertions, and authorization. Output is stored in the data dictionary (metadata).\n\nDML — Data Manipulation Language\nRetrieves, inserts, deletes, and modifies data. Declarative DMLs (e.g. SQL) state what data is needed, not how to fetch it — easier to learn than procedural DMLs.\n6\nDBMS · Unit One",
+    "page": 6,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 216
+  },
+  {
+    "text": "ER Modeling Building Blocks\nA graphical technique for organizing data before implementation\n\n\nEntity\nA distinguishable real-world object (e.g. Employee)\n\n\nAttribute\nA property describing an entity (e.g. Name, Age)\n\n\nRelationship\nAn association between entities (e.g. works-for)\nRELATIONSHIP CARDINALITY\n\n1 : 1\nOne-to-One\nEmployee ↔ Parking space\n\n1 : N\nOne-to-Many\nDepartment ↔ Employees\n\nM : N\nMany-to-Many\nStudent ↔ Courses\n7\nDBMS · Unit One",
+    "page": 7,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 217
+  },
+  {
+    "text": "Relational Model & SQL Essentials\nHow relational terms map to SQL, in practice\nKEY TERMS\n\nRelation\nTable\nTuple\nRow / Record\n\nAttribute\nColumn / Field\nDomain\nSet of allowed values\n\nSuperkey / Primary Key\nUniquely identifies a tuple\nCORE SQL COMMANDS\n\nSELECT\n\nINSERT INTO\n\nUPDATE\n\nDELETE\n\nCREATE TABLE\n\nORDER BY\n\n\n\n\nquery.sql\nSELECT CustomerName, City\nFROM Customers\nWHERE Country = 'Mexico'\nORDER BY CustomerName;\n\n-- Aggregate example\nSELECT AVG(Price) AS AvgPrice\nFROM Products;\n\nThe WHERE clause fi",
+    "page": 8,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 218
+  },
+  {
+    "text": "ustomerName;\n\n-- Aggregate example\nSELECT AVG(Price) AS AvgPrice\nFROM Products;\n\nThe WHERE clause filters rows; ORDER BY sorts the result set; aggregate functions like AVG(), SUM(), COUNT(), MIN(), and MAX() summarize a column (NULLs are ignored).\n8\nDBMS · Unit One",
+    "page": 8,
+    "source": "DBMS_Presentation.pptx",
+    "type": "pptx",
+    "id": 219
+  },
+  {
+    "text": "=> pert\n» IDBMS |\n= /\ni) [Dara =] Data Ys tne yaus mareriol that can be processed tor\n| any computina mathing.\nss Example - Employee name, Produ’ name, Studentrname, Marks\nmay | of the student any number, image.\n= wi\n@ |@nfowmarions] Tr ts tne dota that nas been converted Int\n—\n1 More useful or Jnrettigable form eg- yepost card Sheet.\nee |\n—\n@ |° way We need Informarton 2]\n—\nm |1)- To gain Knowledge abour the Surroundings.\n-_ at\n_) 2): To Keep the system upto dare.\nsy | 3): To Know abour me rules and yeguiarton of the society -\n=) Bi KuMER KEDy\n2 [Kneied5e 2] Human ming purposefully Oyganice the\n= Information and evaluate it to Produce Knowledge e9 238\nwed | if @ data and Marks of student Ys Infovmation and try\nweap | NAYALSOTKK Yequelre fo gor mark ¥s Icnowiedge .\n=a\n-- Knowledge\n—w\n— Far Based Heuristic Based\nond Faur Based {-\n5 | i SIT Knowledge goln from fundamentat\n\"5 £6 ANVOUBN experiments\n—) 5 a\n> o].| Heurishe Based t-| tr js 4ne Knowledge of good practice\n> ANd Food judgement KE hypothesis.\n—)\noad\nPd\nad Atuc KUMAR C LINKEDIN) fi",
+    "source": "dbms_handwritten_1.jpg",
+    "type": "handwritten",
+    "id": 220
+  },
+  {
+    "text": "ee oa\n\n> qh a hleyarenical databace , moder dara ts Ovganized In 4\ntree - like Gryucture. Dara i stoves hievaychically formar.\nDare veprecenres using @ pavent, chlid velartonshlp. In\nhievavehicad DEMS pavent may nave many childern bur\nenlideyn nove only one payent -\n\nsru.vornaRlummenrn).\nETUIORK MODEL. rane Ree\n\n> The network darabase model ailoOs each child fo nave\nmultiple pavents. Tr helpt you t0 addvers the need to model\nmove complex yelattonsnips ike as the over] payrs many\n12 many yelarionship- Gh this model, entities ave\npyyaniged in a gyaph vonlch can be accessed thyough\nSeveral paths\n\n—————_Reranonal Moveh ——___\n\n> Relational OBS is the most widely used Dems mocel\nbecause it is one of the easlest. Ths model js based on\nnormalising dara in the vows and colurmns of the robles\nyelational ‘model stored in fixed structures and manipuate\nusing Sou\n\nOD} viente ———\n\n> Jin amis dara stored in the fovrn oF Objects. The structure Which\ntr called classes Onile display dara within it. Tr is one of the\ncomponents of DEMS that defines a database as a cotlenion\nbf objets whith stoves both dara memberc, values and\nopevations .\n\nAru wornade (tinker) |",
+    "source": "dbms_handwritten_2.jpg",
+    "type": "handwritten",
+    "id": 221
+  }
+]

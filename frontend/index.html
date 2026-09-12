@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyVault — evidence-based course notes</title>
+
+    <meta
+        name="description"
+        content="StudyVault — an evidence-based course material assistant."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Paper texture -->
+    <div class="paper" aria-hidden="true">
+        <div class="ruled-lines"></div>
+        <div class="margin-rule"></div>
+    </div>
+
+
+    <div class="app">
+
+        <!-- ============================= -->
+        <!-- NAVBAR -->
+        <!-- ============================= -->
+
+        <nav class="navbar">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    §
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-name">StudyVault</span>
+                    <span class="brand-tag">Evidence, not guesses</span>
+                </div>
+
+            </div>
+
+
+            <div class="status-pill">
+
+                <span class="status-dot"></span>
+
+                <span>Vault indexed and ready</span>
+
+            </div>
+
+        </nav>
+
+
+        <!-- ============================= -->
+        <!-- MAIN -->
+        <!-- ============================= -->
+
+        <main class="main-container">
+
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <div class="hero-text">
+
+                    <h1>
+                        Ask your notes
+                        <em>before you ask the internet.</em>
+                    </h1>
+
+                    <p>
+                        Ask a question about your course material and get an
+                        answer pulled straight from your uploaded notes,
+                        slides, and handwritten pages — with the exact
+                        source cited underneath.
+                    </p>
+
+                    <div class="feature-row">
+
+                        <span class="feature-tag">PDF and slides</span>
+                        <span class="feature-tag">Handwritten pages</span>
+                        <span class="feature-tag">Cited sources</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-card">
+
+                    <div class="index-card">
+
+                        <div class="index-card-tab">Ref. 14</div>
+
+                        <p class="index-card-quote">
+                            Normalization removes redundant data by
+                            splitting a table into smaller, related ones.
+                        </p>
+
+                        <div class="index-card-source">
+                            DBMS-Unit2.pdf — page 14
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- ASK CARD -->
+            <!-- ============================= -->
+
+            <section class="ask-card">
+
+                <div class="card-head">
+
+                    <span class="card-tab">Ask</span>
+
+                    <h2>What are you studying?</h2>
+
+                </div>
+
+
+                <textarea
+                    id="question"
+                    placeholder="Ask something from your course material..."
+                    rows="4"
+                ></textarea>
+
+
+                <!-- Suggestions -->
+
+                <div class="suggestions">
+
+                    <button
+                        class="suggestion"
+                        data-question="What is DBMS?"
+                    >
+                        What is DBMS?
+                    </button>
+
+                    <button
+                        class="suggestion"
+                        data-question="What is data abstraction?"
+                    >
+                        Data abstraction
+                    </button>
+
+                    <button
+                        class="suggestion"
+                        data-question="What is a hierarchical database model?"
+                    >
+                        Hierarchical model
+                    </button>
+
+                </div>
+
+
+                <button
+                    id="askButton"
+                    class="ask-button"
+                >
+
+                    <span class="button-text">
+                        Ask StudyVault
+                    </span>
+
+                </button>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- LOADING -->
+            <!-- ============================= -->
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="loader"></div>
+
+                <div>
+
+                    <strong>
+                        Searching your vault
+                    </strong>
+
+                    <span>
+                        Finding the most relevant evidence...
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- RESULT -->
+            <!-- ============================= -->
+
+            <section
+                id="result"
+                class="result-card hidden"
+            >
+
+                <!-- Status -->
+
+                <div class="result-header">
+
+                    <div
+                        id="status"
+                        class="status-badge"
+                    >
+                    </div>
+
+                    <div class="result-label">
+                        Response
+                    </div>
+
+                </div>
+
+
+                <!-- Answer -->
+
+                <div class="answer-section">
+
+                    <h3>
+                        Answer
+                    </h3>
+
+
+                    <div
+                        id="answer"
+                        class="answer"
+                    ></div>
+
+                </div>
+
+
+                <!-- Sources -->
+
+                <div class="sources-section">
+
+                    <h3>
+                        Sources
+                    </h3>
+
+
+                    <div
+                        id="sources"
+                        class="sources"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- TRUST MESSAGE -->
+            <!-- ============================= -->
+
+            <p class="trust-message">
+
+                Answers are generated only from your indexed course material.
+                Unsupported questions are marked
+                <strong>not covered</strong>.
+
+            </p>
+
+
+        </main>
+
+
+        <!-- ============================= -->
+        <!-- FOOTER -->
+        <!-- ============================= -->
+
+        <footer class="footer">
+
+            <span>StudyVault</span>
+
+            <span class="footer-rule"></span>
+
+            <span>Evidence-based course assistant</span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
