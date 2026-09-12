@@ -29,14 +29,26 @@ print("Loaded embeddings:", embeddings.shape)
 
 
 # ==========================================
-# LOAD EMBEDDING MODEL
+# LAZY LOAD EMBEDDING MODEL
 # ==========================================
 
-print("Loading embedding model...")
+model = None
 
-model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
+
+def get_model():
+
+    global model
+
+    if model is None:
+
+        print("Loading embedding model...")
+
+        model = SentenceTransformer(
+            "all-MiniLM-L6-v2",
+            device="cpu"
+        )
+
+    return model
 
 
 # ==========================================
@@ -164,7 +176,7 @@ def search(query, top_k=5):
     # Encode query only
     # --------------------------------------
 
-    query_embedding = model.encode(
+    query_embedding = get_model().encode(
         [query],
         convert_to_numpy=True
     )[0]
